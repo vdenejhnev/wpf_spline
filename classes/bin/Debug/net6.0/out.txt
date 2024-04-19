@@ -1,0 +1,18 @@
+
+V2DataArray:
+	V2Data.objectKey: key
+	V2Data.timeData: 21.02.2024 12:39:27
+	fields.vals:
+ x = -5, y1 = 19, y2 = -6
+ x = 0, y1 = -6, y2 = -1
+ x = 5, y1 = 19, y2 = 4
+spline out: 
+X: -5,000, Y: 19,000, Y Spline: 19,000
+X: -2,500, Y: 0,250, Y Spline: 1,813
+X: 0,000, Y: -6,000, Y Spline: -6,000
+X: 2,500, Y: 0,250, Y Spline: 1,813
+X: 5,000, Y: 19,000, Y Spline: 19,000
+
+minNev =  2,2198793780378736
+StopCode = 6
+ CountEter = 51
