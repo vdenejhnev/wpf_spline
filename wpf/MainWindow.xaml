@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFmklusr"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1200" Loaded="Window_Loaded" Left="10" Top="10">
+        Title="MainWindow" Height="800" Width="1200" Loaded="Window_Loaded" Left="10" Top="10" FontFamily="Calibri" Foreground="Black" Background="{x:Null}">
     <Window.CommandBindings>
         <CommandBinding Command="{x:Static local:CustomCommands.SaveCom}"
         Executed="SaveClick"
@@ -40,52 +40,53 @@
     </Window.Resources>
     <Grid Height="800">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="322*"/>
-            <ColumnDefinition Width="87*"/>
-            <ColumnDefinition Width="147*"/>
-            <ColumnDefinition Width="644*"/>
+            <ColumnDefinition Width="600*"/>
+            <ColumnDefinition Width="600*"/>
         </Grid.ColumnDefinitions>
-        <Menu Height="800" Grid.ColumnSpan="4">
-            <MenuItem Header="File">
-                <MenuItem Header="Save" Command="{x:Static local:CustomCommands.SaveCom}"/>
+        <Menu Grid.ColumnSpan="2" FontFamily="Calibri" FontSize="22" Height="NaN">
+            <MenuItem Header="File" FontSize="14">
+                <MenuItem Header="Save" Command="{x:Static local:CustomCommands.SaveCom}" FontFamily="Calibri"/>
             </MenuItem>
-            <MenuItem Header="Execute">
-                <MenuItem Header="Data from Controls" Click="LoadDataFromControls" />
-                <MenuItem Header="Data from File" Click="LoadDataFromFileClick"  />
+            <MenuItem Header="Execute" FontSize="14">
+                <MenuItem Header="Data from File" Click="LoadDataFromFileClick" FontFamily="Calibri"  />
+                <MenuItem Header="Data from Controls" Click="LoadDataFromControls" FontFamily="Calibri" />
             </MenuItem>
         </Menu>
-        <TextBox x:Name="LRBordersTextBox" Width="120" Height="30" Margin="86,542,0,0" TextAlignment="Center" FontSize="22" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  Text ="{Binding LRBorderscl, Converter={StaticResource key_ConverterLRBorders}, Mode=TwoWay, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"  Style="{StaticResource key_Style_Error}"/>
-        <Button x:Name ="DataFromControls" Width="100" Height="30" Margin="211,682,0,0" Content="Data from Controls" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" Click="DataFromControls_Click"/>
-        <TextBox x:Name="CountN" Width="60" Height="30" Margin="116,577,0,0" TextAlignment="Center" FontSize="22" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding CountNcl, Converter={StaticResource key_strtoint}, Mode=TwoWay, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" Style="{StaticResource key_Style_Error}"/>
-        <ComboBox x:Name="typeofmesh" Width="180" Height="30" Margin="56,612,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2,1,2,2" Text="{Binding typeofmeshcl, Converter={StaticResource key_TypeMeshToBool}, Mode=TwoWay}">
-            <TextBlock x:Name="uniformtype" FontSize="22" TextAlignment="Center" VerticalAlignment="Center"><Run Text="uniform"/></TextBlock>
-            <TextBlock x:Name="uneventype" FontSize="22" TextAlignment="Center" VerticalAlignment="Center"><Run Text="uneven"/></TextBlock>
+        <TextBox x:Name="LRBordersTextBox" Width="168" Height="36" Margin="10,458,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  Text ="{Binding LRBorderscl, Converter={StaticResource key_ConverterLRBorders}, Mode=TwoWay, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"  Style="{StaticResource key_Style_Error}" FontFamily="Calibri" AutoWordSelection="True" InputScope="RegularExpression"/>
+        <Button x:Name ="DataFromControls" Width="100" Height="30" Margin="139,706,0,0" Content="Data from Controls" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" Click="DataFromControls_Click"/>
+        <TextBox x:Name="CountN" Width="168" Height="36" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding CountNcl, Converter={StaticResource key_strtoint}, Mode=TwoWay, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" Style="{StaticResource key_Style_Error}" Margin="10,519,0,0" FontFamily="Calibri" AutoWordSelection="True"/>
+        <ComboBox x:Name="typeofmesh" Width="168" Height="36" Margin="10,583,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="2,1,2,2" Text="{Binding typeofmeshcl, Converter={StaticResource key_TypeMeshToBool}, Mode=TwoWay}" FontFamily="Calibri" FontSize="18">
+            <TextBlock x:Name="uniformtype" FontSize="22" TextAlignment="Left" VerticalAlignment="Center"><Run Text="uniform"/></TextBlock>
+            <TextBlock x:Name="uneventype" FontSize="22" TextAlignment="Left" VerticalAlignment="Center"><Run Text="uneven"/></TextBlock>
         </ComboBox>
-        <ComboBox x:Name="functioninp" Width="130" Height="30" Margin="81,647,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="2,1,2,2" ItemsSource="{Binding funclist}" />
-        <TextBox x:Name="countSplineKnot" Width="120" Height="30" Margin="296,542,0,0" TextAlignment="Center" FontSize="22" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding countSmollestMeshKnotcl, Converter={StaticResource key_strtoint}, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" Style="{StaticResource key_Style_Error}" Grid.ColumnSpan="3"/>
-        <TextBox x:Name="countMeshKnot" Width="120" Height="30" Margin="296,577,0,0" TextAlignment="Center" FontSize="22" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding countMeshKnotcl, Converter={StaticResource key_strtoint}, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" Style="{StaticResource key_Style_Error}" Grid.ColumnSpan="3"/>
-        <TextBox x:Name="normNevaz" Width="120" Height="30" Margin="296,612,0,0" TextAlignment="Center" FontSize="22" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding minNevcl, Converter={StaticResource key_strtodouble}}" Grid.ColumnSpan="3"/>
-        <TextBox x:Name="maxCountIter" Width="120" Height="30" Margin="296,647,0,0" TextAlignment="Center" FontSize="22" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding countItercl, Converter={StaticResource key_strtoint}}" Grid.ColumnSpan="3" />
-        <ListBox x:Name="SplineDataItemOut" Width="244" Height="148" Margin="364,108,0,0" BorderThickness="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Top" ItemTemplate="{StaticResource myTemplate}" ItemsSource="{Binding splinedatageter1}" Grid.Column="3" />
-        <ListBox x:Name="SplineDataDoubleMeshOut" Width="244" Height="148" Margin="364,300,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="2,1,2,2" ItemsSource="{Binding splinedatageter2}" Grid.Column="3">
+        <ComboBox x:Name="functioninp" Width="168" Height="36" Margin="10,648,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="2,1,2,2" ItemsSource="{Binding funclist}" FontFamily="Calibri" FontSize="18" />
+        <TextBox x:Name="countMeshKnot" Width="168" Height="36" Margin="384,457,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding countMeshKnotcl, Converter={StaticResource key_strtoint}, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" Style="{StaticResource key_Style_Error}" FontFamily="Calibri" AutoWordSelection="True"/>
+        <TextBox x:Name="countSplineKnot" Width="168" Height="36" Margin="384,519,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding countSmollestMeshKnotcl, Converter={StaticResource key_strtoint}, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" Style="{StaticResource key_Style_Error}" FontFamily="Calibri" AutoWordSelection="True"/>
+        <TextBox x:Name="normNevaz" Width="168" Height="36" Margin="384,582,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding minNevcl, Converter={StaticResource key_strtodouble}}" FontFamily="Calibri" AutoWordSelection="True"/>
+        <TextBox x:Name="maxCountIter" Width="168" Height="36" Margin="384,647,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding countItercl, Converter={StaticResource key_strtoint}}" FontFamily="Calibri" AutoWordSelection="True" />
+        <ListBox x:Name="SplineDataItemOut" Width="580" Height="328" Margin="0,67,0,0" BorderThickness="2,2,2,2" HorizontalAlignment="Center" VerticalAlignment="Top" ItemTemplate="{StaticResource myTemplate}" ItemsSource="{Binding splinedatageter1}" BorderBrush="#FFB5B5B5" FontFamily="Calibri" FontSize="14" />
+        <ListBox x:Name="SplineDataDoubleMeshOut" Width="580" Height="328" Margin="0,67,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="2,1,2,2" ItemsSource="{Binding splinedatageter2}" Grid.Column="1" BorderBrush="#FFB5B5B5" FontFamily="Calibri" FontSize="14">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Converter={StaticResource key_ConverterListBox}}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name ="SaveData" Width="100" Height="30" Margin="107,682,0,0" Content="save" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" Command="{x:Static local:CustomCommands.SaveCom}"/>
-        <Button x:Name ="DataFromFile" Width="100" Height="30" Margin="0,682,0,0" Content="Data from file" VerticalAlignment="Top" HorizontalAlignment="Center" BorderThickness="2,2,2,2" Click="DataFromFile_Click" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="27,543,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2"><Run Text="числ"/><Run Text="о "/><Run Text="узлов равномерной сетки, на которой вычисляются"/><LineBreak/><Run Text="значения сглаживающего сплайна"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="27,579,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2"><Run Language="ru-ru" Text="число узлов сглаживающего сплайна"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="27,619,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2"><Run Text="значени"/><Run Language="ru-ru" Text="е"/><Run Text=" нормы невязки"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="27,654,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2"><Run Language="ru-ru" Text="макс число интераций"/></TextBlock>
-        <Button x:Name ="Execut" Width="100" Height="30" Margin="12,682,0,0" Content="Execut" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" Command="{x:Static local:CustomCommands.ExecuteCom}" Grid.Column="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="211,552,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="Границы"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="181,582,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Число узлов"/>
-        <TextBlock HorizontalAlignment="Left" Margin="236,619,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="рав"/><Run Text="/"/><Run Language="ru-ru" Text="нерав"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="215,654,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="функция"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="364,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="3"><Run Language="ru-ru" Text="Интерполяция"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="364,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="3"><Run Language="ru-ru" Text="Сплайн"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+        <Button x:Name ="SaveData" Width="100" Height="30" Margin="270,706,0,0" Content="Save" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" Command="{x:Static local:CustomCommands.SaveCom}"/>
+        <Button x:Name ="DataFromFile" Width="100" Height="30" Margin="10,706,0,0" Content="Data from file" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" Click="DataFromFile_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="420,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="SplineData" FontFamily="Calibri" FontSize="20" Width="NaN" Height="NaN"/>
+        <TextBlock HorizontalAlignment="Left" Margin="189,468,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Границы отрезка" Height="NaN"/>
+        <TextBlock HorizontalAlignment="Left" Margin="93,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2" Text=""/>
+        <Button x:Name ="Execut" Width="100" Height="30" Margin="410,706,0,0" Content="Execute" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" Command="{x:Static local:CustomCommands.ExecuteCom}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="49,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="DataArray" FontFamily="Calibri" FontSize="20" Width="NaN" Height="NaN"/>
+        <TextBlock HorizontalAlignment="Left" Margin="189,528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Число узлов" FontFamily="Calibri" FontSize="16" Width="NaN" Height="NaN"/>
+        <TextBlock HorizontalAlignment="Left" Margin="189,588,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Тип сетки" FontFamily="Calibri" FontSize="16" Width="NaN" Height="NaN"/>
+        <TextBlock HorizontalAlignment="Left" Margin="187,653,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Функция" Width="NaN" Height="NaN"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="20"><Run Text="Интерполяци"/><Run Language="ru-ru" Text="я"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" FontFamily="Calibri" FontSize="20" Text="Сплайн"/>
+        <TextBlock HorizontalAlignment="Left" Margin="570,467,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Число узлов сплайна" Grid.ColumnSpan="2" Height="NaN"/>
+        <TextBlock HorizontalAlignment="Left" Margin="570,528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Grid.ColumnSpan="2" Height="NaN"><Run Text="Число узлов "/><Run Language="ru-ru" Text="сетки"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="570,587,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Grid.ColumnSpan="2" Height="NaN"><Run Language="ru-ru" Text="Норма невязки"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="570,652,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Максимальное число итераций" Grid.ColumnSpan="2" Height="NaN"/>
     </Grid>
 </Window>
