@@ -7,4 +7,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="DataItem.cs" />
+    <Compile Remove="SplineData.cs" />
+    <Compile Remove="SplineDataItem.cs" />
+    <Compile Remove="V2Data.cs" />
+    <Compile Remove="V2DataArray.cs" />
+    <Compile Remove="V2DataList.cs" />
+    <Compile Remove="V2MainCollection.cs" />
+  </ItemGroup>
+
 </Project>

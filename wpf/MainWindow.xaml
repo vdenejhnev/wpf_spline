@@ -1,19 +1,16 @@
-﻿<Window x:Class="WPFmklusr.MainWindow"
+﻿<Window x:Class="wpf.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:oxy="http://oxyplot.org/wpf"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFmklusr"
+        xmlns:local="clr-namespace:wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1200" Loaded="Window_Loaded" Left="10" Top="10" FontFamily="Calibri" Foreground="Black" Background="{x:Null}">
+        Title="MainWindow" Height="800" Width="1200" Loaded="loadedWindowHandler" Left="10" Top="10" FontFamily="Calibri" Foreground="Black" Background="{x:Null}">
     <Window.CommandBindings>
         <CommandBinding Command="{x:Static local:CustomCommands.SaveCom}"
-        Executed="SaveClick"
-        CanExecute="CanSaveHandler" />
-        <CommandBinding Command="{x:Static local:CustomCommands.ExecuteCom}"
-        Executed="Execut_Click"
-        CanExecute="CanExecuteHandler" />
+        Executed="saveDataHandler"
+        CanExecute="enableSaveHandler" />
     </Window.CommandBindings>
     <Window.Resources>
         <Style x:Key="key_Style_Error" >
@@ -27,66 +24,65 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <local:doublelisttostr x:Key="key_ConverterListBox"/>
-        <local:ConverterLRBorders x:Key="key_ConverterLRBorders"/>
-        <local:TypeMeshToBool x:Key="key_TypeMeshToBool"/>
-        <local:strtoint x:Key="key_strtoint"/>
-        <local:strtodouble x:Key="key_strtodouble"/>
-        <DataTemplate x:Key="myTemplate">
-            <StackPanel>
-                <TextBlock Text="{Binding}"/>
-            </StackPanel>
-        </DataTemplate>
+        <local:DoubleToSplineData x:Key="DoubleToSplineData"/>
+        <local:BordersToString x:Key="BordersToString"/>
+        <local:StringToInt x:Key="StringToInt"/>
+        <local:StringToDouble x:Key="StringToDouble"/>
     </Window.Resources>
     <Grid Height="800">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="600*"/>
             <ColumnDefinition Width="600*"/>
         </Grid.ColumnDefinitions>
-        <Menu Grid.ColumnSpan="2" FontFamily="Calibri" FontSize="22" Height="NaN">
+        <Menu Grid.ColumnSpan="3" FontFamily="Calibri" FontSize="22" Height="NaN">
             <MenuItem Header="File" FontSize="14">
                 <MenuItem Header="Save" Command="{x:Static local:CustomCommands.SaveCom}" FontFamily="Calibri"/>
             </MenuItem>
             <MenuItem Header="Execute" FontSize="14">
-                <MenuItem Header="Data from File" Click="LoadDataFromFileClick" FontFamily="Calibri"  />
-                <MenuItem Header="Data from Controls" Click="LoadDataFromControls" FontFamily="Calibri" />
+                <MenuItem Header="Data from File" Click="loadDataHandler" FontFamily="Calibri"  />
+                <MenuItem Header="Data from Controls" Click="dataFromControlsHandler" FontFamily="Calibri" />
             </MenuItem>
         </Menu>
-        <TextBox x:Name="LRBordersTextBox" Width="168" Height="36" Margin="10,458,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  Text ="{Binding LRBorderscl, Converter={StaticResource key_ConverterLRBorders}, Mode=TwoWay, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"  Style="{StaticResource key_Style_Error}" FontFamily="Calibri" AutoWordSelection="True" InputScope="RegularExpression"/>
-        <Button x:Name ="DataFromControls" Width="100" Height="30" Margin="139,706,0,0" Content="Data from Controls" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" Click="DataFromControls_Click"/>
-        <TextBox x:Name="CountN" Width="168" Height="36" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding CountNcl, Converter={StaticResource key_strtoint}, Mode=TwoWay, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" Style="{StaticResource key_Style_Error}" Margin="10,519,0,0" FontFamily="Calibri" AutoWordSelection="True"/>
-        <ComboBox x:Name="typeofmesh" Width="168" Height="36" Margin="10,583,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="2,1,2,2" Text="{Binding typeofmeshcl, Converter={StaticResource key_TypeMeshToBool}, Mode=TwoWay}" FontFamily="Calibri" FontSize="18">
-            <TextBlock x:Name="uniformtype" FontSize="22" TextAlignment="Left" VerticalAlignment="Center"><Run Text="uniform"/></TextBlock>
-            <TextBlock x:Name="uneventype" FontSize="22" TextAlignment="Left" VerticalAlignment="Center"><Run Text="uneven"/></TextBlock>
+        <TextBox x:Name="borders" Width="168" Height="36" Margin="10,458,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  Text ="{Binding borders, Converter={StaticResource BordersToString}, Mode=TwoWay, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"  Style="{StaticResource key_Style_Error}" FontFamily="Calibri" AutoWordSelection="True" InputScope="RegularExpression"/>
+        <TextBox x:Name="nodes" Width="168" Height="36" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding nodes, Converter={StaticResource StringToInt}, Mode=TwoWay, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" Style="{StaticResource key_Style_Error}" Margin="10,519,0,0" FontFamily="Calibri" AutoWordSelection="True"/>
+        <ComboBox x:Name="gridtype" Width="168" Height="36" Margin="10,583,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="2,1,2,2" FontFamily="Calibri" FontSize="18" SelectedIndex="0" SelectionChanged="gridtypeSelectHandler">
+            <TextBlock x:Name="uniform" FontSize="22" TextAlignment="Left" VerticalAlignment="Center"><Run Text="Равномерная"/></TextBlock>
+            <TextBlock x:Name="uneven" FontSize="22" TextAlignment="Left" VerticalAlignment="Center"><Run Text="Неравномерная"/></TextBlock>
         </ComboBox>
-        <ComboBox x:Name="functioninp" Width="168" Height="36" Margin="10,648,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="2,1,2,2" ItemsSource="{Binding funclist}" FontFamily="Calibri" FontSize="18" />
-        <TextBox x:Name="countMeshKnot" Width="168" Height="36" Margin="384,457,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding countMeshKnotcl, Converter={StaticResource key_strtoint}, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" Style="{StaticResource key_Style_Error}" FontFamily="Calibri" AutoWordSelection="True"/>
-        <TextBox x:Name="countSplineKnot" Width="168" Height="36" Margin="384,519,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding countSmollestMeshKnotcl, Converter={StaticResource key_strtoint}, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" Style="{StaticResource key_Style_Error}" FontFamily="Calibri" AutoWordSelection="True"/>
-        <TextBox x:Name="normNevaz" Width="168" Height="36" Margin="384,582,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding minNevcl, Converter={StaticResource key_strtodouble}}" FontFamily="Calibri" AutoWordSelection="True"/>
-        <TextBox x:Name="maxCountIter" Width="168" Height="36" Margin="384,647,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding countItercl, Converter={StaticResource key_strtoint}}" FontFamily="Calibri" AutoWordSelection="True" />
-        <ListBox x:Name="SplineDataItemOut" Width="580" Height="328" Margin="0,67,0,0" BorderThickness="2,2,2,2" HorizontalAlignment="Center" VerticalAlignment="Top" ItemTemplate="{StaticResource myTemplate}" ItemsSource="{Binding splinedatageter1}" BorderBrush="#FFB5B5B5" FontFamily="Calibri" FontSize="14" />
-        <ListBox x:Name="SplineDataDoubleMeshOut" Width="580" Height="328" Margin="0,67,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="2,1,2,2" ItemsSource="{Binding splinedatageter2}" Grid.Column="1" BorderBrush="#FFB5B5B5" FontFamily="Calibri" FontSize="14">
+        <ComboBox x:Name="function" Width="168" Height="36" Margin="10,648,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" BorderThickness="2,1,2,2" ItemsSource="{Binding functions_titles}" FontFamily="Calibri" FontSize="18" SelectedIndex="0" SelectionChanged="functionSelectHandler"/>
+        <TextBox x:Name="splinenodes" Width="168" Height="36" Margin="384,457,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding splinenodes, Converter={StaticResource StringToInt}, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" Style="{StaticResource key_Style_Error}" FontFamily="Calibri" AutoWordSelection="True" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="splinegridnodes" Width="168" Height="36" Margin="384,519,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding smallsplinenodes, Converter={StaticResource StringToInt}, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}" Style="{StaticResource key_Style_Error}" FontFamily="Calibri" AutoWordSelection="True" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="residualnorm" Width="168" Height="36" Margin="384,582,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding residualnorm, Converter={StaticResource StringToDouble}}" FontFamily="Calibri" AutoWordSelection="True" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="iterations" Width="168" Height="36" Margin="384,647,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding iterations, Converter={StaticResource StringToInt}}" FontFamily="Calibri" AutoWordSelection="True" Grid.ColumnSpan="2" />
+        <ListBox x:Name="SplineDataItemOut" Width="580" Height="328" Margin="10,67,0,0" BorderThickness="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding splinedatageter1}" BorderBrush="#FFB5B5B5" FontFamily="Calibri" FontSize="14" Grid.ColumnSpan="2">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding}"/>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox x:Name="SplineDataDoubleMeshOut" Width="580" Height="328" Margin="0,67,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="2,1,2,2" ItemsSource="{Binding splinedatageter2}" Grid.Column="2" BorderBrush="#FFB5B5B5" FontFamily="Calibri" FontSize="14">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Converter={StaticResource key_ConverterListBox}}"/>
+                    <TextBlock Text="{Binding Converter={StaticResource DoubleToSplineData}}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name ="SaveData" Width="100" Height="30" Margin="270,706,0,0" Content="Save" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" Command="{x:Static local:CustomCommands.SaveCom}"/>
-        <Button x:Name ="DataFromFile" Width="100" Height="30" Margin="10,706,0,0" Content="Data from file" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" Click="DataFromFile_Click"/>
+        <Button x:Name ="loadDataBtn" Width="100" Height="30" Margin="10,706,0,0" Content="Data from file" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" Click="loadDataHandler"/>
+        <Button x:Name ="DataFromControls" Width="100" Height="30" Margin="139,706,0,0" Content="Data from Controls" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" Click="dataFromControlsHandler"/>
+        <Button x:Name ="saveDataBtn" Width="100" Height="30" Margin="270,706,0,0" Content="Save" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" Command="{x:Static local:CustomCommands.SaveCom}"/>
         <TextBlock HorizontalAlignment="Left" Margin="420,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="SplineData" FontFamily="Calibri" FontSize="20" Width="NaN" Height="NaN"/>
         <TextBlock HorizontalAlignment="Left" Margin="189,468,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Границы отрезка" Height="NaN"/>
-        <TextBlock HorizontalAlignment="Left" Margin="93,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2" Text=""/>
-        <Button x:Name ="Execut" Width="100" Height="30" Margin="410,706,0,0" Content="Execute" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="2,2,2,2" Command="{x:Static local:CustomCommands.ExecuteCom}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="93,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" Text=""/>
         <TextBlock HorizontalAlignment="Left" Margin="49,424,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="DataArray" FontFamily="Calibri" FontSize="20" Width="NaN" Height="NaN"/>
         <TextBlock HorizontalAlignment="Left" Margin="189,528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Число узлов" FontFamily="Calibri" FontSize="16" Width="NaN" Height="NaN"/>
         <TextBlock HorizontalAlignment="Left" Margin="189,588,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Тип сетки" FontFamily="Calibri" FontSize="16" Width="NaN" Height="NaN"/>
         <TextBlock HorizontalAlignment="Left" Margin="187,653,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Функция" Width="NaN" Height="NaN"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="20"><Run Text="Интерполяци"/><Run Language="ru-ru" Text="я"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" FontFamily="Calibri" FontSize="20" Text="Сплайн"/>
-        <TextBlock HorizontalAlignment="Left" Margin="570,467,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Число узлов сплайна" Grid.ColumnSpan="2" Height="NaN"/>
-        <TextBlock HorizontalAlignment="Left" Margin="570,528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Grid.ColumnSpan="2" Height="NaN"><Run Text="Число узлов "/><Run Language="ru-ru" Text="сетки"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="570,587,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Grid.ColumnSpan="2" Height="NaN"><Run Language="ru-ru" Text="Норма невязки"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="570,652,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Максимальное число итераций" Grid.ColumnSpan="2" Height="NaN"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" FontFamily="Calibri" FontSize="20" Text="Сплайн"/>
+        <TextBlock HorizontalAlignment="Left" Margin="44,467,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Число узлов сплайна" Grid.ColumnSpan="2" Height="NaN" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="44,528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Grid.ColumnSpan="2" Height="NaN" Grid.Column="1"><Run Text="Число узлов "/><Run Language="ru-ru" Text="сетки"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="44,587,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Grid.ColumnSpan="2" Height="NaN" Grid.Column="1"><Run Language="ru-ru" Text="Норма невязки"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="44,652,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Максимальное число итераций" Grid.ColumnSpan="2" Height="NaN" Grid.Column="1"/>
     </Grid>
 </Window>

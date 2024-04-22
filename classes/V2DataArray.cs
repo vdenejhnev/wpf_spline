@@ -7,8 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Formats.Asn1;
 using System.Text.Json;
-
-namespace mkllab
+/*
+namespace classes
 {
     public delegate void FValues(double x, ref double y1, ref double y2);
     public class V2DataArray : V2Data
@@ -189,3 +189,4 @@ namespace mkllab
 
     
 }
+*/

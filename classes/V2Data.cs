@@ -5,8 +5,8 @@ using System.Numerics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace mkllab
+/*
+namespace classes
 {
     public abstract class V2Data : IEnumerable<DataItem>
     {
@@ -36,3 +36,4 @@ namespace mkllab
         public abstract string ToLongString(string format);
     }
 }
+*/

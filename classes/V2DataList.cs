@@ -5,8 +5,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
-
-namespace mkllab
+/*
+namespace classes
 {
     public delegate DataItem FDI(double x);
     public class V2DataList : V2Data
@@ -114,3 +114,4 @@ namespace mkllab
         }
     }
 }
+*/

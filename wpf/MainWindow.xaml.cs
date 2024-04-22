@@ -1,4 +1,4 @@
-﻿using mkllab;
+﻿using classes;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,523 +9,475 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
+using static classes.V2DataArray;
 
-namespace WPFmklusr
+namespace wpf
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
-    public class doublelisttostr : IValueConverter
+
+
+
+    public class BordersToString : IValueConverter
     {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value != null)
+            {
+                double[] borders = value as double[];
+                return $"{borders[0].ToString()};{borders[1].ToString()}";
+            }
+            
+            return "";
+        }
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            try
+            double[] borders = new double[2];
+
+            if (value != null)
             {
-                double[] ret = new double[2];
-                return ret;
+                string[] str_borders = (value as string).Split(";");
+                borders[0] = System.Convert.ToDouble(str_borders[0]);
+                borders[1] = System.Convert.ToDouble(str_borders[1]);
             }
-            catch { MessageBox.Show("Can`t convert doublelisttostr", "Error message", MessageBoxButton.OK, MessageBoxImage.Error); return -1; }
+            
+            return borders;
         }
+    }
+
+
+
+    public class StringToInt : IValueConverter
+    {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             try
             {
-                if (value == null)
-                {
-                    return null;
-                }
-                double[] v = value as double[];
-                return $"x: {v[0]} y: {v[1]}";
+                return System.Convert.ToInt32(value);
             }
-            catch { MessageBox.Show("Can`t convert doublelisttostr", "Error message", MessageBoxButton.OK, MessageBoxImage.Error); return -1; }
+            catch {
+                MainWindow.showError("Невозможно конвертировать значение типа string в тип int");
+                return false; 
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            try
+            {
+                return value.ToString();
+            }
+            catch
+            {
+                MainWindow.showError("Невозможно конвертировать значение типа int в тип string");
+                return false;
+            }
         }
     }
-    public class strtodouble : IValueConverter
+
+
+
+    public class StringToDouble : IValueConverter
     {
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             try
             {
                 return System.Convert.ToDouble(value);
             }
-            catch { MessageBox.Show("Can`t convert doublelisttostr", "Error message", MessageBoxButton.OK, MessageBoxImage.Error); return -1; }
+            catch
+            {
+                MainWindow.showError("Невозможно конвертировать значение типа string в тип double");
+                return false;
+            }
         }
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             try
             {
                 return value.ToString();
             }
-            catch { MessageBox.Show("Can`t convert doublelisttostr", "Error message", MessageBoxButton.OK, MessageBoxImage.Error); return -1; }
-        }
-    }
-    public class strtoint: IValueConverter
-    {
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            try
+            catch
             {
-                Debug.WriteLine("WORK");
-                return System.Convert.ToInt32(value);
+                MainWindow.showError("Невозможно конвертировать значение типа double в тип string");
+                return false;
             }
-            catch { MessageBox.Show("Can`t convert doublelisttostr", "Error message", MessageBoxButton.OK, MessageBoxImage.Error); return -1; }
-        }
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            try
-            {
-                return value.ToString();
-            }
-            catch { MessageBox.Show("Can`t convert doublelisttostr", "Error message", MessageBoxButton.OK, MessageBoxImage.Error); return -1; }
         }
     }
 
-    public class TypeMeshToBool : IValueConverter
+
+
+    public class DoubleToSplineData : IValueConverter
     {
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            string str = value as string;
-            Debug.WriteLine($"sdfsdfsdfsdfs - {str}");
-            if (str != null)
-            {
-                bool mesh = false;
-                if (str == "uniform")
-                {
-                    mesh = true;
-                }
-                return mesh;
-            }
-            else
-            {
-                return true;
-            }
-        }
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value != null)
+            try
             {
-                bool val_bool = (bool)value;
-                if(val_bool)
+                if (value != null)
                 {
-                    return "uniform";
+                    double[] convert_value = value as double[];
+                    return $"x: {convert_value[0]} y: {convert_value[1]}";
                 }
-                return "uneven";
-                
+                return "null";
             }
-            else
-            {
-                return "uniform";
-            }
-        }
-    }
-public class ConverterLRBorders : IValueConverter
-    {
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            string str = value as string;
-            double[] LRdouble = new double[2];
-            if (str != null)
-            {
-                string[] LRB = str.Split(";");
-                LRdouble[0] = System.Convert.ToDouble(LRB[0]);
-                LRdouble[1] = System.Convert.ToDouble(LRB[1]);
-                return LRdouble;
-            }
-            else
-            {
-                return LRdouble;
+            catch {
+                MainWindow.showError("Невозможно конвертировать значение типа double в тип SplineData");
+                return false; 
             }
         }
 
-        public object Convert(double[] value, Type targetType, object parameter, CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value != null)
-            {
-                double[] LRdouble = value as double[];
-                return LRdouble[0].ToString() + ";" + LRdouble[1].ToString();
-            }
-            else
-            {
-                return "";
-            }
-        }
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            if (value != null)
-            {
-                double[] LRdouble = value as double[];
-                return $"{LRdouble[0].ToString()};{LRdouble[1].ToString()}";
-            }
-            else
-            {
-                return "";
-            }
+            return false;
         }
     }
+
+
+
     public partial class MainWindow : Window
     {
-        static void func(double x, ref double y1, ref double y2)
-        {
-            y1 = Math.Sin(x);
-            y2 = x - 1;
-        }
-        static void func2(double x, ref double y1, ref double y2)
-        {
-            y1 = 2 * x * x + 4 * x - 6;
-            y2 = x - 1;
-        }
-        static void func3(double x, ref double y1, ref double y2)
-        {
-            y1 = x - 2;
-            y2 = x - 1;
-        }
-        static void func4(double x, ref double y1, ref double y2)
-        {
-            y1 = 3 * x * x - 2;
-            y2 = x - 1;
-        }
-        public ViewData dataBack;
+        public ViewData viewData = new ViewData();
+
         public MainWindow()
         {
-            dataBack = new ViewData();
-            InitializeComponent();
-            functioninp.SelectedIndex = 0;
+            InitializeComponent();      
         }
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+
+        private void loadedWindowHandler(object sender, RoutedEventArgs e)
         {
-            dataBack = new ViewData();
-            functioninp.ItemsSource = dataBack.funclist;
-            DataContext = dataBack;
-        }
-        public class ViewData: IDataErrorInfo
-        {
-            public double[] LRBorderscl { get; set; }
-            public int CountNcl { get; set; }
-            public bool typeofmeshcl { get; set; }
-            public ObservableCollection<string> funclist;
-            public ObservableCollection<FValues> fValueslist;
-            public int countMeshKnotcl { get; set; }
-            public int countSmollestMeshKnotcl { get; set; }
-            public double minNevcl { get; set; }
-            public int countItercl { get; set; }
-            public bool loadedDatacl { get; set; }
-
-            public mkllab.V2DataArray DataArray { get; set; }
-            public mkllab.SplineData SplineData { get; set; }
-            public List<SplineDataItem> splinedatageter1 {get{ if (SplineData != null) return SplineData.SplineProxRezult; else return null; }set { }}
-            public List<double[]> splinedatageter2 { get { if (SplineData != null) return SplineData.Ysplines; else return null; } set { } }
-
-            public string Error { get { return "Error text"; } }
-            public string this[string property]
-            {
-                get
-                {
-                    string msg = null;
-                    Debug.WriteLine("ANDFIHIUADFHIUADFHPIUADFH");
-                    switch (property)
-                    {
-                        case "LRBorderscl":
-                            if (LRBorderscl[0] >= LRBorderscl[1])
-                            {
-                                msg = "ошибка в границах";
-                            }
-                            break;
-                        case "CountNcl":
-                            if (CountNcl < 3)
-                            {
-                                msg = "кол-во узлов дискретных значений должно быть больше 2";
-                            }
-                            break;
-                        case "countSmollestMeshKnotcl":
-                            if (countSmollestMeshKnotcl < 3)
-                            {
-                                msg = "кол-во узлов равномерной сетки должно быть больше 2";
-                            }
-                            break;
-                        case "countMeshKnotcl":
-                            if (countMeshKnotcl > CountNcl || countMeshKnotcl < 1)
-                            {
-                                msg = "кол-во узлов сглаживающего сплайна должно быть больше 1 и меньше или равно кол-ва узлов дискретных данных";
-                            }
-                            break;
-
-                        default:
-                                break;
-                    }
-                    return msg;
-                }
-            }
-
-            public void Save(string filename) 
-            {
-                this.DataArray.Save(filename);
-            }
-            public void Load(string filename) 
-            {
-                this.loadedDatacl = true;
-                mkllab.V2DataArray DataArrayTime = new V2DataArray("var", DateTime.Now);
-                mkllab.V2DataArray.Load(filename, ref DataArrayTime);
-                this.DataArray = DataArrayTime;
-                this.LRBorderscl[0] = this.DataArray.x[0];
-                this.LRBorderscl[1] = this.DataArray.x[this.DataArray.x.Length - 1];
-                this.CountNcl = this.DataArray.x.Length;
-                this.typeofmeshcl = this.DataArray.typemesh;
-                this.DataArray.f = this.fValueslist[this.funclist.IndexOf(this.DataArray.fonstr)];
-            }
-            public ViewData()
-            {
-                LRBorderscl = new double[2];
-                //LRBorderscl[0] = 0;
-                //LRBorderscl[1] = 0;
-                //countMeshKnotcl = 0;
-                //minNevcl = 0;
-                //countItercl = 0;
-                funclist = new ObservableCollection<string>();
-                fValueslist = new ObservableCollection<FValues>();
-                funclist.Add("x * x - 6");
-                funclist.Add("2 * x * x + 4 * x - 6");
-                funclist.Add("x - 2");
-                funclist.Add("3 * x * x - 2");
-                fValueslist.Add(func);
-                fValueslist.Add(func2);
-                fValueslist.Add(func3);
-                fValueslist.Add(func4);
-                loadedDatacl = false;
-            }
-            public ViewData(double[] borders, int N, bool mesh, int countMeshKnot, int countSmollestMeshKnot) 
-            {
-                LRBorderscl = new double[2];
-                LRBorderscl[0] = borders[0];
-                LRBorderscl[1] = borders[1];
-                CountNcl = N;
-                typeofmeshcl = mesh;
-                this.countMeshKnotcl = countMeshKnot;
-                this.countSmollestMeshKnotcl = countSmollestMeshKnot;
-                this.DataArray = new V2DataArray("var", DateTime.Now);
-            }
-            public void CreateDataArray(FValues function, object funcstr) 
-            {
-                string functionstr = funcstr as string;
-                Debug.WriteLine("entry");
-                if (typeofmeshcl == true)
-                {
-                    this.DataArray = new V2DataArray("V2DataArray", DateTime.Now, CountNcl, LRBorderscl[0], LRBorderscl[1], function, functionstr);
-                    Debug.WriteLine(DataArray.fonstr);
-                    Debug.WriteLine(countItercl);
-                    Debug.WriteLine(LRBorderscl[0]);
-                    Debug.WriteLine(LRBorderscl[1]);
-                }
-                else
-                {
-                    double[] mesharray = new double[this.CountNcl];
-                    Debug.WriteLine($"count - {this.CountNcl}");
-                    string showa = "";
-                    for (int i = 0; i < CountNcl; i++)
-                    {
-                        Random random = new Random();
-                        mesharray[i] = random.NextDouble() * (this.LRBorderscl[1] - this.LRBorderscl[0]) + this.LRBorderscl[0];
-                        showa += mesharray[i].ToString() + " ";
-                    }
-                    Array.Sort(mesharray);
-                    
-                    this.DataArray = new V2DataArray("V2DataArray", DateTime.Now, mesharray, function, functionstr);
-                }
-                loadedDatacl = true;
-            }
-            public void CreateSplineData() 
-            {
-                this.SplineData = new mkllab.SplineData(this.DataArray, countMeshKnotcl, countItercl, minNevcl, countSmollestMeshKnotcl);
-                this.SplineData.CallSpline();
-            }
+            function.ItemsSource = viewData.functions_titles;
+            DataContext = viewData;
         }
 
-        private void SaveClick(object sender, System.EventArgs e)
-        {
-            // Configure open file dialog box
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            dlg.FileName = "Document"; // Default file name
-            dlg.DefaultExt = ".txt"; // Default file extension
-            dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
-
-            // Show open file dialog box
-            Nullable<bool> result = dlg.ShowDialog();
-
-            // Process open file dialog box results
-            if (result == true)
-            {
-                // Open document
-                string filename = dlg.FileName;
-                
-                dataBack.Save(filename);
-            }
-        }
-        private void LoadDataFromFileClick(object sender, System.EventArgs e)
+        private void saveDataHandler(object sender, System.EventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            dlg.FileName = "Document"; // Default file name
-            dlg.DefaultExt = ".txt"; // Default file extension
-            dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
+            dlg.FileName = "data";
+            dlg.DefaultExt = ".txt";
+            dlg.Filter = "Text documents (.txt)|*.txt";
 
-            // Show open file dialog box
-            Nullable<bool> result = dlg.ShowDialog();
-
-            // Process open file dialog box results
-            if (result == true)
+            if (dlg.ShowDialog() == true)
             {
                 try
                 {
-                    // Open document
-                    string filename = dlg.FileName;
-                    dataBack.Load(filename);
-                    functioninp.SelectedIndex = dataBack.funclist.IndexOf(dataBack.DataArray.fonstr);
-                    BindingOperations.GetBindingExpression(LRBordersTextBox, TextBox.TextProperty).UpdateTarget();
-                    BindingOperations.GetBindingExpression(CountN, TextBox.TextProperty).UpdateTarget();
-                    BindingOperations.GetBindingExpression(typeofmesh, ComboBox.TextProperty).UpdateTarget();
-                    //LRBordersTextBox.Text = dataBack.DataArray.x[0].ToString() + ";" + dataBack.DataArray.x[dataBack.DataArray.x.Length - 1].ToString();
-                    //CountN.Text = dataBack.DataArray.x.Length.ToString();
-                    //dataBack.DataArray.f = fValueslist[funclist.IndexOf(dataBack.DataArray.fonstr)];
-                    //if (dataBack.DataArray.typemesh)
-                    //{
-                    //    typeofmesh.SelectedIndex = 0; 
-                    //}
-                    //else
-                    //{
-                    //    typeofmesh.SelectedIndex = 1;
-                    //}
-                    //functioninp.SelectedIndex = funclist.IndexOf(dataBack.DataArray.fonstr);
-
-                    // SplineDataItemOut.ItemsSource = dataBack.SplineData.ToLongString("0.000");
+                    viewData.Save(dlg.FileName);
+                    showMessage("Данные успешно сохранены");
                 }
-                catch 
+                catch (Exception exc)
                 {
-                    surend_error("error load data from file");
+                    showError("Ошибка сохранения данных в файл " + dlg.FileName + ": " + exc);
                 }
             }
             else
             {
-                surend_error("file not found");
+                showError("Файл " + dlg.FileName + " не найден");
             }
         }
-        private void LoadDataFromControls(object sender, System.EventArgs e)
+
+        private void loadDataHandler(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.FileName = "data";
+            dlg.DefaultExt = ".txt";
+            dlg.Filter = "Text documents (.txt)|*.txt";
+
+            if (dlg.ShowDialog() == true)
+            {
+                try
+                {
+                    viewData.Load(dlg.FileName);
+                    //function.SelectedIndex = viewData.funclist.IndexOf(viewData.DataArray.fonstr);
+                    BindingOperations.GetBindingExpression(borders, TextBox.TextProperty).UpdateTarget();
+                    BindingOperations.GetBindingExpression(nodes, TextBox.TextProperty).UpdateTarget();
+                    //BindingOperations.GetBindingExpression(gridtype, ComboBox.TextProperty).UpdateTarget();
+                }
+                catch (Exception exc)
+                {
+                    showError("Ошибка загрузки данных из файла " + dlg.FileName + ": " + exc);
+                }
+            }
+            else
+            {
+                showError("Файл " + dlg.FileName + " не найден");
+            }
+        }
+
+        private void dataFromControlsHandler(object sender, RoutedEventArgs e)
         {
             try
             {
-                if (dataBack.LRBorderscl[0] >= dataBack.LRBorderscl[1]) { surend_error("error input"); return; }
-                if (dataBack.LRBorderscl[0] == double.NaN || dataBack.LRBorderscl[1] == double.NaN || dataBack.CountNcl <2) { surend_error("error input"); return; }
-
-                dataBack.CreateDataArray(dataBack.fValueslist[functioninp.SelectedIndex], functioninp.SelectedItem);
-                Debug.WriteLine(dataBack.DataArray.ToLongString("f4"));
-                //MessageBox.Show(dataBack.LRBorderscl[0].ToString() +" "+ dataBack.LRBorderscl[1].ToString()+" "+  dataBack.CountNcl.ToString() +" "+ dataBack.typeofmeshcl.ToString());
-            }
-            catch 
-            {
-                surend_error("error on getting data from control");
-            }
-        }
-
-        private void Execut_Click(object sender, RoutedEventArgs e)
-        {
-            if (dataBack.loadedDatacl)
-            {
-                try
-                {
-                    if(int.Parse(countMeshKnot.Text) < 0 || int.Parse(maxCountIter.Text) < 0 || double.Parse(normNevaz.Text) < 0) { surend_error("spline input error"); return; }
-                    dataBack.CreateSplineData();
-                    //SplineDataItemOut.ItemsSource = dataBack.SplineData.SplineProxRezult;
-                    SplineDataItemOut.ItemsSource = dataBack.SplineData.SplineProxRezult;
-                    SplineDataDoubleMeshOut.ItemsSource = dataBack.splinedatageter2;
+                if (viewData.borders[0] >= viewData.borders[1] || viewData.borders[0] == double.NaN || viewData.borders[1] == double.NaN) { 
+                    showError("Некоррекное значение границ"); 
+                    return;
                 }
-                catch
-                {
-                    surend_error("error creating spline");
+
+                if (viewData.nodes < 2) {
+                    showError("Некоррекное значение узлов"); 
+                    return; 
                 }
-            }
-            else
-            {
-                surend_error("data not loaded");
-            }    
-        }
 
-        private void DataFromFile_Click(object sender, RoutedEventArgs e)
-        {
-            LoadDataFromFileClick(sender, e);
-        }
+                viewData.getDataArray();
 
-        private void DataFromControls_Click(object sender, RoutedEventArgs e)
-        {
-            LoadDataFromControls(sender, e);
-        }
-
-        private void SaveData_Click(object sender, RoutedEventArgs e)
-        {
-            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
-            dlg.FileName = "Document"; // Default file name
-            dlg.DefaultExt = ".txt"; // Default file extension
-            dlg.Filter = "Text documents (.txt)|*.txt"; // Filter files by extension
-            if (dataBack.loadedDatacl == false)
-            {
-                surend_error("data not init");
-            }
-            else
-            {
-                // Show save file dialog box
-                Nullable<bool> result = dlg.ShowDialog();
-
-                // Process save file dialog box results
-                if (result == true)
+                if (viewData.load_data)
                 {
                     try
                     {
-                        string filename = dlg.FileName;
-                        dataBack.Save(filename);
-                        MessageBox.Show("saved");
+                      
+                        if (viewData.splinenodes < 1 || viewData.splinenodes > viewData.nodes)
+                        {
+                            showError("Некоррекное значение узлов сплайна");
+                            return;
+                        }
+
+                        if (viewData.smallsplinenodes < 3)
+                        {
+                            showError("Некоррекное значение узлов равномерной сетки");
+                            return;
+                        }
+
+                        if (viewData.iterations <= 0)
+                        {
+                            showError("Некоррекное значение итераций");
+                            return;
+                        }
+
+                        if (viewData.residualnorm <= 0) 
+                        {
+                            showError("Некоррекное значение нормы невязки");
+                            return;
+                        }
+
+                        //viewData.toString();
+
+                        viewData.getSplineData();
+                        SplineDataItemOut.ItemsSource = viewData.SplineData.Results;
+                        SplineDataDoubleMeshOut.ItemsSource = viewData.SplineData.ResultsSmallGrid;
                     }
                     catch
                     {
-                        surend_error("save failed!!!");
+                        showError("Ошибка при построении сплайна");
                     }
-
                 }
                 else
                 {
-                    surend_error("file not found");
+                    showError("Данные не загружены");
                 }
+            }
+            catch
+            {
+                showError("Ошибка при обработке данных");
             }
         }
 
-        public void surend_error(string msg)
+        private void enableSaveHandler(object sender, CanExecuteRoutedEventArgs e)
         {
-            MessageBox.Show(msg, "Error message", MessageBoxButton.OK, MessageBoxImage.Error);
+            e.CanExecute = false;
+
+            if (viewData != null)
+            {
+                e.CanExecute = viewData.load_data;
+            }
         }
 
-        private void CanExecuteHandler(object sender, CanExecuteRoutedEventArgs e)
+        public static void showError(string msg)
         {
-            if(Validation.GetHasError(LRBordersTextBox) == true || Validation.GetHasError(CountN) == true || Validation.GetHasError(countSplineKnot) == true || Validation.GetHasError(countMeshKnot) == true || dataBack.loadedDatacl == false)
-            {
-                e.CanExecute = false;
-                return; 
-            }
-            else { e.CanExecute = true; return;}
+            MessageBox.Show(msg, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
         }
-        private void CanSaveHandler(object sender, CanExecuteRoutedEventArgs e)
+
+        public static void showMessage(string msg)
         {
-            if (dataBack != null)
-            {
-                if (dataBack.loadedDatacl != true)
-                {
-                    e.CanExecute = false;
-                    return;
-                }
-                else { e.CanExecute = true; return; }
+            MessageBox.Show(msg, "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void gridtypeSelectHandler(object sender, SelectionChangedEventArgs e)
+        {
+            viewData.gridtype = false;
+
+            if (gridtype.SelectedIndex == 0) {
+                viewData.gridtype = true;
             }
-            else
-            { e.CanExecute= false; return; }
+        }
+
+        private void functionSelectHandler(object sender, SelectionChangedEventArgs e)
+        {
+            viewData.function = function.SelectedIndex;
         }
     }
+
+
+
     public static class CustomCommands
     {
         public static RoutedCommand SaveCom = new RoutedCommand("SaveCom", typeof(CustomCommands));
         public static RoutedCommand ExecuteCom = new RoutedCommand("ExecuteCom", typeof(CustomCommands));
+    }
+
+
+
+    public class ViewData
+    {
+        public double[] borders { get; set; }
+        public int nodes { get; set; }
+        public bool gridtype { get; set; }
+        public int function { get; set; }
+        public ObservableCollection<string> functions_titles;
+        public ObservableCollection<FValues> functions;
+        public int splinenodes { get; set; }
+        public int smallsplinenodes { get; set; }
+        public double residualnorm { get; set; }
+        public int iterations { get; set; }
+        public bool load_data = false;
+
+        public classes.V2DataArray DataArray;
+        public classes.SplineData SplineData;
+
+        public List<SplineDataItem> splinedatageter1 { 
+            get {
+                if (SplineData != null)
+                {
+                    return SplineData.Results;
+                }
+
+                return null; 
+            } 
+            set { } 
+        }
+
+        public List<double[]> splinedatageter2 {
+            get
+            {
+                if (SplineData != null)
+                {
+                    return SplineData.ResultsSmallGrid;
+                }
+
+                return null;
+            }
+            set { } 
+        }
+
+        static double function1(double x, int index)
+        {
+            return x * x;
+        }
+
+        static double function2(double x, int index)
+        {
+            return x * x * x;
+        }
+
+
+        static double function3(double x, int index)
+        {
+            if (index == 0)
+            {
+                return (1 / 2 * x) + 2;
+            }
+
+            return (1 / 2 * x) + 4;
+        }
+
+        static double function4(double x, int index)
+        {
+            if (index == 0)
+            {
+                return (x * 4 + x * x + 2) / 2;
+            }
+
+            return (x * 4 + x * x + 4) / 4;
+        }
+
+        public ViewData()
+        {
+            borders = new double[2];
+            functions_titles = new ObservableCollection<string>()
+            {
+                "x^2",
+                "x^3",
+                "(1 / 2 * x) + 2",
+                "(x * 4 + x^2 + 2) / 2"
+            };
+
+            functions = new ObservableCollection<FValues>()
+            {
+                function1,
+                function2,
+                function3,
+                function4
+            };
+            load_data = false;
+        }
+
+        public ViewData(double[] borders, int nodes, bool gridtype, int splinenodes, int smallsplinenodes, FValues function)
+        {
+            this.borders = new double[2];
+            this.borders = borders;
+            this.nodes = nodes;
+            this.gridtype = gridtype;
+            this.splinenodes = splinenodes;
+            this.smallsplinenodes = smallsplinenodes;
+            this.DataArray = new V2DataArray("DataArray1", DateTime.Now, nodes, borders[0], borders[1], function);
+        }
+
+        public void Save(string filename)
+        {
+            V2DataArray.Save(filename, this.DataArray);
+        }
+
+        public void Load(string filename)
+        {
+            classes.V2DataArray.Load(filename, ref this.DataArray);
+            this.load_data = true;
+            this.borders[0] = this.DataArray.X[0];
+            this.borders[1] = this.DataArray.X[this.DataArray.X.Length - 1];
+            this.nodes = this.DataArray.X.Length;
+        }
+
+        public void getDataArray()
+        {
+            if (gridtype == true)
+            {
+                this.DataArray = new V2DataArray("DataArray1", DateTime.Now, nodes, borders[0], borders[1], functions[function]);
+            }
+            else
+            {
+                double[] nodes = new double[this.nodes];
+
+                for (int i = 0; i < nodes.Length; i++)
+                {
+                    Random random = new Random();
+                    nodes[i] = random.NextDouble() * (this.borders[1] - this.borders[0]) + this.borders[0];
+                }
+
+                Array.Sort(nodes);
+                
+                this.DataArray = new V2DataArray("DataArray1", DateTime.Now, new double[2] { borders[0], borders[1] }, nodes, functions[function]);
+            }
+
+            load_data = true;
+        }
+
+        public void getSplineData()
+        {
+            this.SplineData = new classes.SplineData(this.DataArray, splinenodes, smallsplinenodes, residualnorm, iterations);
+            this.SplineData.ApproximateSpline();
+        }
+
+        public void toString()
+        {
+            Debug.WriteLine("------------- ViewData -------------");
+            Debug.WriteLine("borders: " + this.borders[0] + " | " + this.borders[1]);
+            Debug.WriteLine("nodes: " + this.nodes);
+            Debug.WriteLine("gridtype: " + this.gridtype);
+            Debug.WriteLine("function: " + this.functions_titles[this.function]);
+            Debug.WriteLine("splinenodes: " + this.splinenodes);
+            Debug.WriteLine("smallsplinenodes: " + this.smallsplinenodes);
+            Debug.WriteLine("residualnorm: " + this.residualnorm);
+            Debug.WriteLine("iterations: " + this.iterations);
+            Debug.WriteLine("------------------------------------");
+        }
     }
 }

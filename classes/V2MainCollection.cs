@@ -6,8 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
 using System.Net.Sockets;
-
-namespace mkllab
+/*
+namespace classes
 {
     public class V2MainCollection : System.Collections.ObjectModel.ObservableCollection<V2Data>
     {
@@ -154,3 +154,4 @@ namespace mkllab
 
     }
 }
+*/
