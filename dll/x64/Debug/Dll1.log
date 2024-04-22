@@ -1,0 +1,1491 @@
+﻿  Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.38.33133 для x64
+  (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
+  cl /c /ID:\Intel\oneAPI\mkl\2024.0\include /ZI /JMC /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D DLL1_EXPORTS /D _WINDOWS /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /permissive- /Yc"pch.h" /Fp"x64\Debug\DLL1.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt pch.cpp
+  pch.cpp
+D:\projects\c(264,13): warning C4101: ret: неиспользованная локальная переменная
+  Оптимизирующий компилятор Microsoft (R) C/C++ версии 19.38.33133 для x64
+  (C) Корпорация Майкрософт (Microsoft Corporation).  Все права защищены.
+  cl /c /ID:\Intel\oneAPI\mkl\2024.0\include /ZI /JMC /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D DLL1_EXPORTS /D _WINDOWS /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /permissive- /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt dllmain.cpp
+  dllmain.cpp
+LINK : warning LNK4075: не учитывается "/INCREMENTAL" из-за спецификации "/OPT:REF"
+  Запуск 1-го прохода
+  Обработан параметр /DEFAULTLIB:MSVCRTD
+  Обработан параметр /DEFAULTLIB:OLDNAMES
+dllmain.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/OPT:ICF"
+  Обработан параметр /DEFAULTLIB:msvcprtd
+  Поиск библиотек
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_intel_lp64_dll.lib:
+        Найден dtrnlsp_init
+          Имеются ссылки в pch.obj
+          Загружен mkl_intel_lp64_dll.lib(_dtrnlsp_init_lp64.obj)
+        Найден dtrnlsp_check
+          Имеются ссылки в pch.obj
+          Загружен mkl_intel_lp64_dll.lib(_dtrnlsp_check_lp64.obj)
+        Найден dtrnlsp_solve
+          Имеются ссылки в pch.obj
+          Загружен mkl_intel_lp64_dll.lib(_dtrnlsp_solve_lp64.obj)
+        Найден dtrnlsp_get
+          Имеются ссылки в pch.obj
+          Загружен mkl_intel_lp64_dll.lib(_dtrnlsp_get_lp64.obj)
+        Найден dtrnlsp_delete
+          Имеются ссылки в pch.obj
+          Загружен mkl_intel_lp64_dll.lib(_dtrnlsp_delete_lp64.obj)
+        Найден djacobix
+          Имеются ссылки в pch.obj
+          Загружен mkl_intel_lp64_dll.lib(_djacobix_lp64.obj)
+        Найден dfdNewTask1D
+          Имеются ссылки в pch.obj
+          Загружен mkl_intel_lp64_dll.lib(df_dnewtask1d.obj)
+  Обработан параметр /DEFAULTLIB:uuid.lib
+        Найден dfdEditPPSpline1D
+          Имеются ссылки в pch.obj
+          Загружен mkl_intel_lp64_dll.lib(df_deditppspline1d.obj)
+        Найден dfdConstruct1D
+          Имеются ссылки в pch.obj
+          Загружен mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+        Найден dfdInterpolate1D
+          Имеются ссылки в pch.obj
+          Загружен mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+        Найден dfDeleteTask
+          Имеются ссылки в pch.obj
+          Загружен mkl_intel_lp64_dll.lib(df_deletetask.obj)
+        Найден mkl_vml_serv_load_vml_dll
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_deletetask.obj)
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_dnewtask1d.obj)
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_deditppspline1d.obj)
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+          Загружен mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+        Найден mkl_serv_iface_exit
+          Имеются ссылки в mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+          Загружен mkl_intel_lp64_dll.lib(_set_exit_handler.obj)
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_sequential_dll.lib:
+        Найден mkl_trs_dtrnlsp_init
+          Имеются ссылки в mkl_intel_lp64_dll.lib(_dtrnlsp_init_lp64.obj)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден mkl_trs_dtrnlsp_check
+          Имеются ссылки в mkl_intel_lp64_dll.lib(_dtrnlsp_check_lp64.obj)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден mkl_trs_dtrnlsp_solve
+          Имеются ссылки в mkl_intel_lp64_dll.lib(_dtrnlsp_solve_lp64.obj)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден mkl_trs_dtrnlsp_get
+          Имеются ссылки в mkl_intel_lp64_dll.lib(_dtrnlsp_get_lp64.obj)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден mkl_trs_dtrnlsp_delete
+          Имеются ссылки в mkl_intel_lp64_dll.lib(_dtrnlsp_delete_lp64.obj)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден mkl_trs_djacobix
+          Имеются ссылки в mkl_intel_lp64_dll.lib(_djacobix_lp64.obj)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден mkl_df_serv_threader_for
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден mkl_df_serv_threader_for_ordered
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден mkl_df_serv_threader_sections
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден mkl_df_serv_threader_ordered
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден mkl_df_serv_threader_get_num_threads_limit
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+          Имеются ссылки в mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден mkl_serv_load_vml
+          Имеются ссылки в mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден mkl_serv_print
+          Имеются ссылки в mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден mkl_serv_set_exit_handler
+          Имеются ссылки в mkl_intel_lp64_dll.lib(_set_exit_handler.obj)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден __IMPORT_DESCRIPTOR_mkl_sequential.2
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден __NULL_IMPORT_DESCRIPTOR
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+        Найден mkl_sequential.2_NULL_THUNK_DATA
+          Имеются ссылки в mkl_sequential_dll.lib(mkl_sequential.2.dll)
+          Загружен mkl_sequential_dll.lib(mkl_sequential.2.dll)
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_core_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_sequential.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_core.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_intel_lp64.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\kernel32.lib:
+        Найден __imp_GetProcAddress
+          Имеются ссылки в mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_MultiByteToWideChar
+          Имеются ссылки в mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetModuleFileNameW
+          Имеются ссылки в mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetModuleHandleExA
+          Имеются ссылки в mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_TerminateProcess
+          Имеются ссылки в mkl_intel_lp64_dll.lib(_set_exit_handler.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetCurrentProcess
+          Имеются ссылки в mkl_intel_lp64_dll.lib(_set_exit_handler.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __IMPORT_DESCRIPTOR_KERNEL32
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден KERNEL32_NULL_THUNK_DATA
+          Имеются ссылки в kernel32.lib(KERNEL32.dll)
+          Загружен kernel32.lib(KERNEL32.dll)
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\user32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\gdi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\winspool.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\comdlg32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\advapi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\shell32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\ole32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\oleaut32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\uuid.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbc32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbccp32.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\MSVCRTD.lib:
+        Найден _RTC_InitBase
+          Имеются ссылки в dllmain.obj
+          Имеются ссылки в pch.obj
+          Загружен MSVCRTD.lib(init.obj)
+        Найден __CheckForDebuggerJustMyCode
+          Имеются ссылки в dllmain.obj
+          Имеются ссылки в pch.obj
+          Загружен MSVCRTD.lib(debugger_jmc.obj)
+        Найден "void * __cdecl operator new[](unsigned __int64)" (??_U@YAPEAX_K@Z)
+          Имеются ссылки в pch.obj
+          Загружен MSVCRTD.lib(new_array.obj)
+        Найден "void __cdecl operator delete[](void *)" (??_V@YAXPEAX@Z)
+          Имеются ссылки в pch.obj
+          Загружен MSVCRTD.lib(delete_array.obj)
+        Найден _RTC_CheckStackVars
+          Имеются ссылки в pch.obj
+          Загружен MSVCRTD.lib(stack.obj)
+        Найден __GSHandlerCheck
+          Имеются ссылки в pch.obj
+          Имеются ссылки в mkl_intel_lp64_dll.lib(_dtrnlsp_check_lp64.obj)
+          Загружен MSVCRTD.lib(gshandler.obj)
+        Найден __GSHandlerCheck_EH4
+          Имеются ссылки в pch.obj
+          Загружен MSVCRTD.lib(gshandlereh4.obj)
+        Найден __security_check_cookie
+          Имеются ссылки в pch.obj
+          Имеются ссылки в mkl_intel_lp64_dll.lib(_dtrnlsp_check_lp64.obj)
+          Имеются ссылки в MSVCRTD.lib(gshandler.obj)
+          Загружен MSVCRTD.lib(amdsecgs.obj)
+        Найден "const type_info::`vftable'" (??_7type_info@@6B@)
+          Имеются ссылки в pch.obj
+          Загружен MSVCRTD.lib(std_type_info_static.obj)
+        Найден __security_cookie
+          Имеются ссылки в pch.obj
+          Имеются ссылки в mkl_intel_lp64_dll.lib(_dtrnlsp_check_lp64.obj)
+          Имеются ссылки в MSVCRTD.lib(amdsecgs.obj)
+          Загружен MSVCRTD.lib(gs_cookie.obj)
+        Найден _fltused
+          Имеются ссылки в pch.obj
+          Загружен MSVCRTD.lib(fltused.obj)
+        Найден _DllMainCRTStartup
+          Загружен MSVCRTD.lib(dll_dllmain.obj)
+        Найден _RTC_SetErrorFuncW
+          Имеются ссылки в MSVCRTD.lib(init.obj)
+          Загружен MSVCRTD.lib(userapi.obj)
+        Найден "void * __cdecl operator new(unsigned __int64)" (??2@YAPEAX_K@Z)
+          Имеются ссылки в MSVCRTD.lib(new_array.obj)
+          Загружен MSVCRTD.lib(new_scalar.obj)
+        Найден "void __cdecl operator delete(void *)" (??3@YAXPEAX@Z)
+          Имеются ссылки в MSVCRTD.lib(delete_array.obj)
+          Загружен MSVCRTD.lib(delete_scalar.obj)
+        Найден "void __cdecl _RTC_StackFailure(void *,char const *)" (?_RTC_StackFailure@@YAXPEAXPEBD@Z)
+          Имеются ссылки в MSVCRTD.lib(stack.obj)
+          Загружен MSVCRTD.lib(error.obj)
+        Найден __report_gsfailure
+          Имеются ссылки в MSVCRTD.lib(amdsecgs.obj)
+          Загружен MSVCRTD.lib(gs_report.obj)
+        Найден "void __cdecl operator delete(void *,unsigned __int64)" (??3@YAXPEAX_K@Z)
+          Имеются ссылки в MSVCRTD.lib(std_type_info_static.obj)
+          Загружен MSVCRTD.lib(delete_scalar_size.obj)
+        Найден __security_init_cookie
+          Имеются ссылки в MSVCRTD.lib(dll_dllmain.obj)
+          Загружен MSVCRTD.lib(gs_support.obj)
+        Найден "void __cdecl __scrt_initialize_type_info(void)" (?__scrt_initialize_type_info@@YAXXZ)
+          Имеются ссылки в MSVCRTD.lib(dll_dllmain.obj)
+          Загружен MSVCRTD.lib(tncleanup.obj)
+        Найден __scrt_initialize_default_local_stdio_options
+          Имеются ссылки в MSVCRTD.lib(dll_dllmain.obj)
+          Загружен MSVCRTD.lib(default_local_stdio_options.obj)
+        Найден __scrt_is_nonwritable_in_current_image
+          Имеются ссылки в MSVCRTD.lib(dll_dllmain.obj)
+          Загружен MSVCRTD.lib(utility.obj)
+        Найден __scrt_get_dyn_tls_init_callback
+          Имеются ссылки в MSVCRTD.lib(dll_dllmain.obj)
+          Загружен MSVCRTD.lib(dyn_tls_init.obj)
+        Найден __scrt_fastfail
+          Имеются ссылки в MSVCRTD.lib(dll_dllmain.obj)
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен MSVCRTD.lib(utility_desktop.obj)
+        Найден _RTC_Initialize
+          Имеются ссылки в MSVCRTD.lib(dll_dllmain.obj)
+          Загружен MSVCRTD.lib(initsect.obj)
+        Найден __xi_a
+          Имеются ссылки в MSVCRTD.lib(dll_dllmain.obj)
+          Загружен MSVCRTD.lib(initializers.obj)
+  Обработан параметр /DEFAULTLIB:kernel32.lib
+   Обработан /DISALLOWLIB:msvcrt.lib
+   Обработан /DISALLOWLIB:libcmt.lib
+   Обработан /DISALLOWLIB:libcmtd.lib
+   Обработан /DISALLOWLIB:vcruntime.lib
+  Обработан параметр /DEFAULTLIB:vcruntimed.lib
+   Обработан /DISALLOWLIB:libvcruntime.lib
+   Обработан /DISALLOWLIB:libvcruntimed.lib
+   Обработан /DISALLOWLIB:ucrt.lib
+  Обработан параметр /DEFAULTLIB:ucrtd.lib
+   Обработан /DISALLOWLIB:libucrt.lib
+   Обработан /DISALLOWLIB:libucrtd.lib
+        Найден __guard_dispatch_icall_fptr
+          Имеются ссылки в MSVCRTD.lib(dll_dllmain.obj)
+          Имеются ссылки в MSVCRTD.lib(error.obj)
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Имеются ссылки в MSVCRTD.lib(initsect.obj)
+          Загружен MSVCRTD.lib(guard_support.obj)
+        Найден "void __cdecl __scrt_throw_std_bad_alloc(void)" (?__scrt_throw_std_bad_alloc@@YAXXZ)
+          Имеются ссылки в MSVCRTD.lib(new_scalar.obj)
+          Загружен MSVCRTD.lib(throw_bad_alloc.obj)
+        Найден "int __cdecl _RTC_GetSrcLine(unsigned char *,wchar_t *,unsigned long,int *,wchar_t *,unsigned long)" (?_RTC_GetSrcLine@@YAHPEAEPEA_WKPEAH1K@Z)
+          Имеются ссылки в MSVCRTD.lib(error.obj)
+          Загружен MSVCRTD.lib(pdblkup.obj)
+        Найден __isa_available_init
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен MSVCRTD.lib(cpu_disp.obj)
+        Найден _get_startup_argv_mode
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен MSVCRTD.lib(argv_mode.obj)
+        Найден __scrt_is_ucrt_dll_in_use
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен MSVCRTD.lib(ucrt_detection.obj)
+        Найден _guard_dispatch_icall_nop
+          Имеются ссылки в MSVCRTD.lib(guard_support.obj)
+          Загружен MSVCRTD.lib(guard_dispatch.obj)
+        Найден _guard_xfg_dispatch_icall_nop
+          Имеются ссылки в MSVCRTD.lib(guard_support.obj)
+          Загружен MSVCRTD.lib(guard_xfg_dispatch.obj)
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\OLDNAMES.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\msvcprtd.lib:
+        Найден "bool __cdecl std::uncaught_exception(void)" (?uncaught_exception@std@@YA_NXZ)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: bool __cdecl std::ios_base::good(void)const " (__imp_?good@ios_base@std@@QEBA_NXZ)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: int __cdecl std::ios_base::flags(void)const " (__imp_?flags@ios_base@std@@QEBAHXZ)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: __int64 __cdecl std::ios_base::width(void)const " (__imp_?width@ios_base@std@@QEBA_JXZ)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: __int64 __cdecl std::ios_base::width(__int64)" (__imp_?width@ios_base@std@@QEAA_J_J@Z)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: int __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::sputc(char)" (__imp_?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: __int64 __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::sputn(char const *,__int64)" (__imp_?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAA_JPEBD_J@Z)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: void __cdecl std::basic_ios<char,struct std::char_traits<char> >::setstate(int,bool)" (__imp_?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > * __cdecl std::basic_ios<char,struct std::char_traits<char> >::tie(void)const " (__imp_?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBAPEAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: class std::basic_streambuf<char,struct std::char_traits<char> > * __cdecl std::basic_ios<char,struct std::char_traits<char> >::rdbuf(void)const " (__imp_?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBAPEAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: char __cdecl std::basic_ios<char,struct std::char_traits<char> >::fill(void)const " (__imp_?fill@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADXZ)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: char __cdecl std::basic_ios<char,struct std::char_traits<char> >::widen(char)const " (__imp_?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADD@Z)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: void __cdecl std::basic_ostream<char,struct std::char_traits<char> >::_Osfx(void)" (__imp_?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::operator<<(class std::basic_ostream<char,struct std::char_traits<char> > & (__cdecl*)(class std::basic_ostream<char,struct std::char_traits<char> > &))" (__imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@P6AAEAV01@AEAV01@@Z@Z)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::put(char)" (__imp_?put@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@D@Z)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::flush(void)" (__imp_?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден "__declspec(dllimport) class std::basic_ostream<char,struct std::char_traits<char> > std::cout" (__imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A)
+          Имеются ссылки в pch.obj
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден __IMPORT_DESCRIPTOR_MSVCP140D
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+        Найден MSVCP140D_NULL_THUNK_DATA
+          Имеются ссылки в msvcprtd.lib(MSVCP140D.dll)
+          Загружен msvcprtd.lib(MSVCP140D.dll)
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\vcruntimed.lib:
+        Найден _CxxThrowException
+          Имеются ссылки в pch.obj
+          Имеются ссылки в MSVCRTD.lib(throw_bad_alloc.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __CxxFrameHandler4
+          Имеются ссылки в pch.obj
+          Имеются ссылки в MSVCRTD.lib(gshandlereh4.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140_1D.dll)
+        Найден wcsrchr
+          Имеются ссылки в mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __C_specific_handler
+          Имеются ссылки в MSVCRTD.lib(dll_dllmain.obj)
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __C_specific_handler_noexcept
+          Имеются ссылки в MSVCRTD.lib(error.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __std_type_info_destroy_list
+          Имеются ссылки в MSVCRTD.lib(tncleanup.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __current_exception
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __current_exception_context
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __std_exception_copy
+          Имеются ссылки в MSVCRTD.lib(throw_bad_alloc.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __std_exception_destroy
+          Имеются ссылки в MSVCRTD.lib(throw_bad_alloc.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __vcrt_GetModuleFileNameW
+          Имеются ссылки в MSVCRTD.lib(pdblkup.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __vcrt_GetModuleHandleW
+          Имеются ссылки в MSVCRTD.lib(pdblkup.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __vcrt_LoadLibraryExW
+          Имеются ссылки в MSVCRTD.lib(pdblkup.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __IMPORT_DESCRIPTOR_VCRUNTIME140D
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден __IMPORT_DESCRIPTOR_VCRUNTIME140_1D
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140_1D.dll)
+          Загружен vcruntimed.lib(VCRUNTIME140_1D.dll)
+        Найден VCRUNTIME140D_NULL_THUNK_DATA
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140D.dll)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+        Найден VCRUNTIME140_1D_NULL_THUNK_DATA
+          Имеются ссылки в vcruntimed.lib(VCRUNTIME140_1D.dll)
+          Загружен vcruntimed.lib(VCRUNTIME140_1D.dll)
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x64\ucrtd.lib:
+        Найден strlen
+          Имеются ссылки в pch.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __imp_setlocale
+          Имеются ссылки в pch.obj
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден wcsnlen
+          Имеются ссылки в mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден wcsncat_s
+          Имеются ссылки в mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _CrtDbgReport
+          Имеются ссылки в MSVCRTD.lib(init.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _CrtDbgReportW
+          Имеются ссылки в MSVCRTD.lib(init.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _initterm
+          Имеются ссылки в MSVCRTD.lib(dll_dllmain.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _initterm_e
+          Имеются ссылки в MSVCRTD.lib(dll_dllmain.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _callnewh
+          Имеются ссылки в MSVCRTD.lib(new_scalar.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден malloc
+          Имеются ссылки в MSVCRTD.lib(new_scalar.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _free_dbg
+          Имеются ссылки в MSVCRTD.lib(delete_scalar.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден strcpy_s
+          Имеются ссылки в MSVCRTD.lib(error.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден strcat_s
+          Имеются ссылки в MSVCRTD.lib(error.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __stdio_common_vsprintf_s
+          Имеются ссылки в MSVCRTD.lib(error.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _seh_filter_dll
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _configure_narrow_argv
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _initialize_narrow_environment
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _initialize_onexit_table
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _register_onexit_function
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _execute_onexit_table
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _crt_atexit
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _crt_at_quick_exit
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _cexit
+          Имеются ссылки в MSVCRTD.lib(utility.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден terminate
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _wmakepath_s
+          Имеются ссылки в MSVCRTD.lib(pdblkup.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден _wsplitpath_s
+          Имеются ссылки в MSVCRTD.lib(pdblkup.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден wcscpy_s
+          Имеются ссылки в MSVCRTD.lib(pdblkup.obj)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден __IMPORT_DESCRIPTOR_ucrtbased
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Загружен ucrtd.lib(ucrtbased.dll)
+        Найден ucrtbased_NULL_THUNK_DATA
+          Имеются ссылки в ucrtd.lib(ucrtbased.dll)
+          Загружен ucrtd.lib(ucrtbased.dll)
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_intel_lp64_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_sequential_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_core_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_sequential.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_core.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_intel_lp64.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\kernel32.lib:
+        Найден __imp_GetCurrentThreadId
+          Имеются ссылки в MSVCRTD.lib(debugger_jmc.obj)
+          Имеются ссылки в MSVCRTD.lib(gs_support.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_IsDebuggerPresent
+          Имеются ссылки в MSVCRTD.lib(error.obj)
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_RaiseException
+          Имеются ссылки в MSVCRTD.lib(error.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_WideCharToMultiByte
+          Имеются ссылки в MSVCRTD.lib(error.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_RtlCaptureContext
+          Имеются ссылки в MSVCRTD.lib(gs_report.obj)
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_RtlLookupFunctionEntry
+          Имеются ссылки в MSVCRTD.lib(gs_report.obj)
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_RtlVirtualUnwind
+          Имеются ссылки в MSVCRTD.lib(gs_report.obj)
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_UnhandledExceptionFilter
+          Имеются ссылки в MSVCRTD.lib(gs_report.obj)
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_SetUnhandledExceptionFilter
+          Имеются ссылки в MSVCRTD.lib(gs_report.obj)
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_IsProcessorFeaturePresent
+          Имеются ссылки в MSVCRTD.lib(gs_report.obj)
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_QueryPerformanceCounter
+          Имеются ссылки в MSVCRTD.lib(gs_support.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetCurrentProcessId
+          Имеются ссылки в MSVCRTD.lib(gs_support.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetSystemTimeAsFileTime
+          Имеются ссылки в MSVCRTD.lib(gs_support.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_InitializeSListHead
+          Имеются ссылки в MSVCRTD.lib(tncleanup.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetStartupInfoW
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetModuleHandleW
+          Имеются ссылки в MSVCRTD.lib(utility_desktop.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetLastError
+          Имеются ссылки в MSVCRTD.lib(pdblkup.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_HeapAlloc
+          Имеются ссылки в MSVCRTD.lib(pdblkup.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_HeapFree
+          Имеются ссылки в MSVCRTD.lib(pdblkup.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_GetProcessHeap
+          Имеются ссылки в MSVCRTD.lib(pdblkup.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_VirtualQuery
+          Имеются ссылки в MSVCRTD.lib(pdblkup.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+        Найден __imp_FreeLibrary
+          Имеются ссылки в MSVCRTD.lib(pdblkup.obj)
+          Загружен kernel32.lib(KERNEL32.dll)
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\user32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\gdi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\winspool.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\comdlg32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\advapi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\shell32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\ole32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\oleaut32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\uuid.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbc32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbccp32.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\MSVCRTD.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\OLDNAMES.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\msvcprtd.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\vcruntimed.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x64\ucrtd.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_intel_lp64_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_sequential_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_core_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_sequential.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_core.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_intel_lp64.lib:
+  Поиск библиотек завершен
+  Создание файла .exp
+     Создается библиотека D:\projects\c#_project\lab4\x64\Debug\DLL1.lib и объект D:\projects\c#_project\lab4\x64\Debug\DLL1.exp
+  Создание файла .exp завершено
+  Поиск библиотек
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_intel_lp64_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_sequential_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_core_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_sequential.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_core.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_intel_lp64.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\kernel32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\user32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\gdi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\winspool.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\comdlg32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\advapi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\shell32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\ole32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\oleaut32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\uuid.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbc32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbccp32.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\MSVCRTD.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\OLDNAMES.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\msvcprtd.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\vcruntimed.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x64\ucrtd.lib:
+  Поиск библиотек завершен
+  Поиск библиотек
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_intel_lp64_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_sequential_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_core_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_sequential.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_core.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_intel_lp64.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\kernel32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\user32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\gdi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\winspool.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\comdlg32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\advapi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\shell32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\ole32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\oleaut32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\uuid.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbc32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbccp32.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\MSVCRTD.lib:
+        Найден __scrt_stub_for_acrt_initialize
+          Загружен MSVCRTD.lib(ucrt_stubs.obj)
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\OLDNAMES.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\msvcprtd.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\vcruntimed.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x64\ucrtd.lib:
+  Поиск библиотек завершен
+  Поиск библиотек
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_intel_lp64_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_sequential_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_core_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_sequential.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_core.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_intel_lp64.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\kernel32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\user32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\gdi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\winspool.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\comdlg32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\advapi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\shell32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\ole32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\oleaut32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\uuid.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbc32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbccp32.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\MSVCRTD.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\OLDNAMES.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\msvcprtd.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\vcruntimed.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x64\ucrtd.lib:
+  Поиск библиотек завершен
+  Поиск библиотек
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_intel_lp64_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_sequential_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_core_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_sequential.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_core.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_intel_lp64.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\kernel32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\user32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\gdi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\winspool.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\comdlg32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\advapi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\shell32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\ole32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\oleaut32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\uuid.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbc32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbccp32.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\MSVCRTD.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\OLDNAMES.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\msvcprtd.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\vcruntimed.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x64\ucrtd.lib:
+  Поиск библиотек завершен
+  1-ый проход завершен
+  Поиск библиотек
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_intel_lp64_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_sequential_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\2024.1\lib\mkl_core_dll.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_sequential.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_core.lib:
+      Поиск D:\Intel\oneAPI\mkl\latest\lib\mkl_intel_lp64.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\kernel32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\user32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\gdi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\winspool.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\comdlg32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\advapi32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\shell32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\ole32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\oleaut32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\uuid.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbc32.lib:
+      Поиск C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbccp32.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\MSVCRTD.lib:
+        Найден _load_config_used
+          Загружен MSVCRTD.lib(loadcfg.obj)
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\OLDNAMES.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\msvcprtd.lib:
+      Поиск D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\vcruntimed.lib:
+        Найден __guard_memcpy_fptr
+          Имеются ссылки в MSVCRTD.lib(loadcfg.obj)
+          Загружен vcruntimed.lib(softmemtag.obj)
+        Найден memcpy
+          Имеются ссылки в vcruntimed.lib(softmemtag.obj)
+          Загружен vcruntimed.lib(VCRUNTIME140D.dll)
+  Поиск библиотек завершен
+  Вызов rc.exe:
+   /v
+   /x
+   /fo
+   "C:\Users\pisme\AppData\Local\Temp\lnk{C9A61173-73A8-4261-B28B-10AA7C43F551}.tmp"
+   "C:\Users\pisme\AppData\Local\Temp\lnk{C298E0F2-B952-4001-AEA0-A28E4418F8F2}.tmp"
+  Microsoft (R) Windows (R) Resource Compiler Version 10.0.10011.16384
+  
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  
+  Using codepage 1251 as default
+  Creating C:\Users\pisme\AppData\Local\Temp\lnk{C9A61173-73A8-4261-B28B-10AA7C43F551}.tmp
+  
+  
+  C:\Users\pisme\AppData\Local\Temp\lnk{C298E0F2-B952-4001-AEA0-A28E4418F8F2}.tmp.
+  Writing 24:2,	lang:0x409,	size 145
+  Вызов cvtres.exe:
+   /machine:amd64
+   /verbose
+   /out:"C:\Users\pisme\AppData\Local\Temp\lnk{ABF7CAAA-689E-4D97-8A15-DCC6E012823C}.tmp"
+   /readonly
+   "C:\Users\pisme\AppData\Local\Temp\lnk{C9A61173-73A8-4261-B28B-10AA7C43F551}.tmp"
+  ╩юэтхЁЄхЁ ЁхёєЁёют Windows т юс·хъЄ√ (Microsoft (R)), тхЁёш  14.38.33133.0
+  (C) ╩юЁяюЁрЎш  ╠рщъЁюёюЇЄ (Microsoft Corp.). ┬ёх яЁртр чр∙ш∙хэ√.
+  
+  фюсртыхэшх ЁхёєЁёр. Єшя: MANIFEST, шь : 2,  ч√ъ: 0x0409, Їыруш: 0x30, ЁрчьхЁ: 145
+  Неиспользуемые библиотеки:
+    D:\Intel\oneAPI\mkl\2024.1\lib\mkl_core_dll.lib
+    D:\Intel\oneAPI\mkl\latest\lib\mkl_sequential.lib
+    D:\Intel\oneAPI\mkl\latest\lib\mkl_core.lib
+    D:\Intel\oneAPI\mkl\latest\lib\mkl_intel_lp64.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\user32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\gdi32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\winspool.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\comdlg32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\advapi32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\shell32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\ole32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\oleaut32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\uuid.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbc32.lib
+    C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\um\x64\odbccp32.lib
+    D:\Microsoft VS\2022\Community\VC\Tools\MSVC\14.38.33130\lib\x64\OLDNAMES.lib
+      Удален "`string'" (??_C@_0BE@A@__itt_suppress_push?$AA@) из mkl_intel_lp64_dll.lib(df_dnewtask1d.obj)
+      Удален "`string'" (??_C@_0BD@A@__itt_suppress_pop?$AA@) из mkl_intel_lp64_dll.lib(df_dnewtask1d.obj)
+      Удален .2.8_2.switchtab.3 из mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+      Удален .2.9_2.switchtab.3 из mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+      Удален "`string'" (??_C@_0N@A@?4?4?2compiler?2?$AA@) из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален "`string'" (??_C@_0BC@A@mkl_vml_def?42?4dll?$AA@) из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален "`string'" (??_C@_0BD@A@mkl_vml_cmpt?42?4dll?$AA@) из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален "`string'" (??_C@_0BC@A@mkl_vml_p4n?42?4dll?$AA@) из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален "`string'" (??_C@_0BB@A@mkl_vml_mc?42?4dll?$AA@) из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален "`string'" (??_C@_0BC@A@mkl_vml_mc2?42?4dll?$AA@) из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален "`string'" (??_C@_0BC@A@mkl_vml_mc3?42?4dll?$AA@) из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален "`string'" (??_C@_0BC@A@mkl_vml_avx?42?4dll?$AA@) из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален "`string'" (??_C@_0BD@A@mkl_vml_avx2?42?4dll?$AA@) из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален "`string'" (??_C@_0BI@A@libmkl_vml_avx512?42?4dll?$AA@) из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален "`string'" (??_C@_01A@?5?$AA@) из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален "`string'" (??_C@_01A@?2?$AA@) из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален "`string'" (??_C@_0N@A@?$DMmkl?9loader?$DO?$AA@) из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален "`string'" (??_C@_0BA@A@dll_cpu_version?$AA@) из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален "`string'" (??_C@_05MKKEDADM@?$CF?42X?5@) из MSVCRTD.lib(error.obj)
+      Удален "`string'" (??_C@_0EJ@LJKNEOLN@Stack?5area?5around?5_alloca?5memor@) из MSVCRTD.lib(error.obj)
+      Удален "`string'" (??_C@_01EEMJAFIK@?6@) из MSVCRTD.lib(error.obj)
+      Удален "`string'" (??_C@_02LLMPMKNF@?$DO?5@) из MSVCRTD.lib(error.obj)
+      Удален "`string'" (??_C@_08OMAHNMHJ@?6Data?3?5?$DM@) из MSVCRTD.lib(error.obj)
+      Удален "`string'" (??_C@_0CK@DKGBICFE@?6Allocation?5number?5within?5this?5@) из MSVCRTD.lib(error.obj)
+      Удален "`string'" (??_C@_07DFDJCKFN@?6Size?3?5@) из MSVCRTD.lib(error.obj)
+      Удален "`string'" (??_C@_0N@MHFFIMFG@?6Address?3?50x@) из MSVCRTD.lib(error.obj)
+      Удален "`string'" (??_C@_0EI@CLEPFNGI@Stack?5area?5around?5_alloca?5memor@) из MSVCRTD.lib(error.obj)
+      Удален "`string'" (??_C@_0BK@ODNDAGKB@?$CFs?$CFs?$CFp?$CFs?$CFzd?$CFs?$CFd?$CFs?$CFs?$CFs?$CFs?$CFs@) из MSVCRTD.lib(error.obj)
+      Удален "`string'" (??_C@_0DE@OHJBPMBP@A?5variable?5is?5being?5used?5withou@) из MSVCRTD.lib(error.obj)
+      Удален __CastGuardVftablesStart из MSVCRTD.lib(guard_support.obj)
+      Удален __CastGuardVftablesEnd из MSVCRTD.lib(guard_support.obj)
+      Удален _RTC_InitBase.rtc$IMZ из dllmain.obj
+      Удален _RTC_InitBase.rtc$IMZ из pch.obj
+      Удален _RTC_Shutdown.rtc$TMZ из dllmain.obj
+      Удален _RTC_Shutdown.rtc$TMZ из pch.obj
+      Удален $unwind$?__empty_global_delete@@YAXPEAX@Z из pch.obj
+      Удален $unwind$?__empty_global_delete@@YAXPEAX_K@Z из pch.obj
+      Удален ".xdata" из mkl_intel_lp64_dll.lib(df_dnewtask1d.obj)
+      Удален ".xdata" из mkl_intel_lp64_dll.lib(df_dnewtask1d.obj)
+      Удален ".xdata" из mkl_intel_lp64_dll.lib(df_deditppspline1d.obj)
+      Удален ".xdata" из mkl_intel_lp64_dll.lib(df_deditppspline1d.obj)
+      Удален ".xdata" из mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+      Удален ".xdata" из mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+      Удален ".xdata" из mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+      Удален ".xdata" из mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+      Удален ".xdata" из mkl_intel_lp64_dll.lib(df_deletetask.obj)
+      Удален ".xdata" из mkl_intel_lp64_dll.lib(df_deletetask.obj)
+      Удален ".xdata" из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален $unwind$_RTC_Shutdown из MSVCRTD.lib(init.obj)
+      Удален $unwind$_RTC_InitBase из MSVCRTD.lib(init.obj)
+      Удален $unwind$_RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален $chain$1$_RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален $chain$2$_RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален $chain$3$_RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален $chain$4$_RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален $chain$5$_RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален $chain$6$_RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален $unwind$_RTC_AllocaHelper из MSVCRTD.lib(stack.obj)
+      Удален $chain$0$_RTC_AllocaHelper из MSVCRTD.lib(stack.obj)
+      Удален $chain$1$_RTC_AllocaHelper из MSVCRTD.lib(stack.obj)
+      Удален $unwind$_CRT_INIT из MSVCRTD.lib(dll_dllmain.obj)
+      Удален $unwind$_RTC_UninitUse из MSVCRTD.lib(error.obj)
+      Удален $unwind$?_RTC_AllocaFailure@@YAXPEAXPEAU_RTC_ALLOCA_NODE@@H@Z из MSVCRTD.lib(error.obj)
+      Удален $chain$0$?_RTC_AllocaFailure@@YAXPEAXPEAU_RTC_ALLOCA_NODE@@H@Z из MSVCRTD.lib(error.obj)
+      Удален $chain$1$?_RTC_AllocaFailure@@YAXPEAXPEAU_RTC_ALLOCA_NODE@@H@Z из MSVCRTD.lib(error.obj)
+      Удален $unwind$_vsprintf_s_l из MSVCRTD.lib(error.obj)
+      Удален $unwind$sprintf_s из MSVCRTD.lib(error.obj)
+      Удален $unwind$?_getMemBlockDataString@@YAXPEAD0PEBD_K@Z из MSVCRTD.lib(error.obj)
+      Удален $chain$3$?_getMemBlockDataString@@YAXPEAD0PEBD_K@Z из MSVCRTD.lib(error.obj)
+      Удален $chain$4$?_getMemBlockDataString@@YAXPEAD0PEBD_K@Z из MSVCRTD.lib(error.obj)
+      Удален $unwind$__report_securityfailure из MSVCRTD.lib(gs_report.obj)
+      Удален $unwind$__report_securityfailureEx из MSVCRTD.lib(gs_report.obj)
+      Удален $unwind$__report_rangecheckfailure из MSVCRTD.lib(gs_report.obj)
+      Удален $unwind$capture_current_context из MSVCRTD.lib(gs_report.obj)
+      Удален $unwind$atexit из MSVCRTD.lib(utility.obj)
+      Удален $unwind$_onexit из MSVCRTD.lib(utility.obj)
+      Удален $unwind$at_quick_exit из MSVCRTD.lib(utility.obj)
+      Удален $unwind$__scrt_get_show_window_mode из MSVCRTD.lib(utility_desktop.obj)
+      Удален $unwind$__scrt_is_managed_app из MSVCRTD.lib(utility_desktop.obj)
+      Удален $unwind$__scrt_initialize_mta из MSVCRTD.lib(utility_desktop.obj)
+      Удален $unwind$__scrt_set_unhandled_exception_filter из MSVCRTD.lib(utility_desktop.obj)
+      Удален $unwind$__scrt_unhandled_exception_filter из MSVCRTD.lib(utility_desktop.obj)
+      Удален $unwind$ReadNoFence64 из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$ReadPointerNoFence из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$__castguard_set_user_handler из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$_guard_icall_checks_enforced из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$__castguard_compat_check из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$__castguard_check_failure_os_handled_wrapper из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$__castguard_check_failure_user_handled_wrapper из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$__castguard_check_failure_debugbreak из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$__castguard_check_failure_fastfail из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$__castguard_check_failure_os_handled из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$__castguard_check_failure_user_handled из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$__castguard_slow_path_compat_check из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$__castguard_slow_path_check_debugbreak из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$__castguard_slow_path_check_fastfail из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$__castguard_slow_path_check_os_handled из MSVCRTD.lib(guard_support.obj)
+      Удален $unwind$__castguard_slow_path_check_user_handled из MSVCRTD.lib(guard_support.obj)
+      Удален __@@_PchSym_@00@UkilqvxghUxKxwPkilqvxgUozyEUwooUcGEUwvyftUkxsOlyq@4B2008FD98C1DD4 из pch.obj
+      Удален "bool `_RTC_InitBase'::`2'::init" (?init@?1??_RTC_InitBase@@9@4_NA) из MSVCRTD.lib(init.obj)
+      Удален __castguard_check_failure_user_handled_fptr из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$?__empty_global_delete@@YAXPEAX@Z из pch.obj
+      Удален $pdata$?__empty_global_delete@@YAXPEAX_K@Z из pch.obj
+      Удален ".pdata" из mkl_intel_lp64_dll.lib(df_dnewtask1d.obj)
+      Удален ".pdata" из mkl_intel_lp64_dll.lib(df_dnewtask1d.obj)
+      Удален ".pdata" из mkl_intel_lp64_dll.lib(df_deditppspline1d.obj)
+      Удален ".pdata" из mkl_intel_lp64_dll.lib(df_deditppspline1d.obj)
+      Удален ".pdata" из mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+      Удален ".pdata" из mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+      Удален ".pdata" из mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+      Удален ".pdata" из mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+      Удален ".pdata" из mkl_intel_lp64_dll.lib(df_deletetask.obj)
+      Удален ".pdata" из mkl_intel_lp64_dll.lib(df_deletetask.obj)
+      Удален ".pdata" из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален $pdata$_RTC_Shutdown из MSVCRTD.lib(init.obj)
+      Удален $pdata$_RTC_InitBase из MSVCRTD.lib(init.obj)
+      Удален $pdata$_RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален $pdata$1$_RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален $pdata$2$_RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален $pdata$3$_RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален $pdata$4$_RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален $pdata$5$_RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален $pdata$6$_RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален $pdata$_RTC_AllocaHelper из MSVCRTD.lib(stack.obj)
+      Удален $pdata$0$_RTC_AllocaHelper из MSVCRTD.lib(stack.obj)
+      Удален $pdata$1$_RTC_AllocaHelper из MSVCRTD.lib(stack.obj)
+      Удален $pdata$_CRT_INIT из MSVCRTD.lib(dll_dllmain.obj)
+      Удален $pdata$_RTC_UninitUse из MSVCRTD.lib(error.obj)
+      Удален $pdata$?_RTC_AllocaFailure@@YAXPEAXPEAU_RTC_ALLOCA_NODE@@H@Z из MSVCRTD.lib(error.obj)
+      Удален $pdata$0$?_RTC_AllocaFailure@@YAXPEAXPEAU_RTC_ALLOCA_NODE@@H@Z из MSVCRTD.lib(error.obj)
+      Удален $pdata$1$?_RTC_AllocaFailure@@YAXPEAXPEAU_RTC_ALLOCA_NODE@@H@Z из MSVCRTD.lib(error.obj)
+      Удален $pdata$_vsprintf_s_l из MSVCRTD.lib(error.obj)
+      Удален $pdata$sprintf_s из MSVCRTD.lib(error.obj)
+      Удален $pdata$?_getMemBlockDataString@@YAXPEAD0PEBD_K@Z из MSVCRTD.lib(error.obj)
+      Удален $pdata$3$?_getMemBlockDataString@@YAXPEAD0PEBD_K@Z из MSVCRTD.lib(error.obj)
+      Удален $pdata$4$?_getMemBlockDataString@@YAXPEAD0PEBD_K@Z из MSVCRTD.lib(error.obj)
+      Удален $pdata$__report_securityfailure из MSVCRTD.lib(gs_report.obj)
+      Удален $pdata$__report_securityfailureEx из MSVCRTD.lib(gs_report.obj)
+      Удален $pdata$__report_rangecheckfailure из MSVCRTD.lib(gs_report.obj)
+      Удален $pdata$capture_current_context из MSVCRTD.lib(gs_report.obj)
+      Удален $pdata$atexit из MSVCRTD.lib(utility.obj)
+      Удален $pdata$_onexit из MSVCRTD.lib(utility.obj)
+      Удален $pdata$at_quick_exit из MSVCRTD.lib(utility.obj)
+      Удален $pdata$__scrt_get_show_window_mode из MSVCRTD.lib(utility_desktop.obj)
+      Удален $pdata$__scrt_is_managed_app из MSVCRTD.lib(utility_desktop.obj)
+      Удален $pdata$__scrt_initialize_mta из MSVCRTD.lib(utility_desktop.obj)
+      Удален $pdata$__scrt_set_unhandled_exception_filter из MSVCRTD.lib(utility_desktop.obj)
+      Удален $pdata$__scrt_unhandled_exception_filter из MSVCRTD.lib(utility_desktop.obj)
+      Удален $pdata$ReadNoFence64 из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$ReadPointerNoFence из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$__castguard_set_user_handler из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$_guard_icall_checks_enforced из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$__castguard_compat_check из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$__castguard_check_failure_os_handled_wrapper из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$__castguard_check_failure_user_handled_wrapper из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$__castguard_check_failure_debugbreak из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$__castguard_check_failure_fastfail из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$__castguard_check_failure_os_handled из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$__castguard_check_failure_user_handled из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$__castguard_slow_path_compat_check из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$__castguard_slow_path_check_debugbreak из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$__castguard_slow_path_check_fastfail из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$__castguard_slow_path_check_os_handled из MSVCRTD.lib(guard_support.obj)
+      Удален $pdata$__castguard_slow_path_check_user_handled из MSVCRTD.lib(guard_support.obj)
+      Удален ".idata$4" из kernel32.lib(KERNEL32.dll)
+      Удален ".idata$4" из kernel32.lib(KERNEL32.dll)
+      Удален ".idata$4" из kernel32.lib(KERNEL32.dll)
+      Удален ".idata$4" из kernel32.lib(KERNEL32.dll)
+      Удален ".idata$4" из vcruntimed.lib(VCRUNTIME140D.dll)
+      Удален ".idata$4" из vcruntimed.lib(VCRUNTIME140D.dll)
+      Удален ".idata$4" из vcruntimed.lib(VCRUNTIME140D.dll)
+      Удален ".idata$4" из mkl_sequential_dll.lib(mkl_sequential.2.dll)
+      Удален ".idata$4" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$4" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$4" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$4" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$4" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$4" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$4" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$4" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$4" из ucrtd.lib(ucrtbased.dll)
+      Удален __imp_GetModuleHandleW из kernel32.lib(KERNEL32.dll)
+      Удален __imp_GetStartupInfoW из kernel32.lib(KERNEL32.dll)
+      Удален __imp_GetModuleFileNameW из kernel32.lib(KERNEL32.dll)
+      Удален __imp_GetModuleHandleExA из kernel32.lib(KERNEL32.dll)
+      Удален __imp___current_exception_context из vcruntimed.lib(VCRUNTIME140D.dll)
+      Удален __imp_wcsrchr из vcruntimed.lib(VCRUNTIME140D.dll)
+      Удален __imp___current_exception из vcruntimed.lib(VCRUNTIME140D.dll)
+      Удален __imp_mkl_serv_set_exit_handler из mkl_sequential_dll.lib(mkl_sequential.2.dll)
+      Удален __imp_terminate из ucrtd.lib(ucrtbased.dll)
+      Удален __imp__crt_atexit из ucrtd.lib(ucrtbased.dll)
+      Удален __imp__CrtDbgReportW из ucrtd.lib(ucrtbased.dll)
+      Удален __imp_wcsncat_s из ucrtd.lib(ucrtbased.dll)
+      Удален __imp_wcsnlen из ucrtd.lib(ucrtbased.dll)
+      Удален __imp__register_onexit_function из ucrtd.lib(ucrtbased.dll)
+      Удален __imp__CrtDbgReport из ucrtd.lib(ucrtbased.dll)
+      Удален __imp___stdio_common_vsprintf_s из ucrtd.lib(ucrtbased.dll)
+      Удален __imp__crt_at_quick_exit из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$6" из mkl_sequential_dll.lib(mkl_sequential.2.dll)
+      Удален ".idata$6" из kernel32.lib(KERNEL32.dll)
+      Удален ".idata$6" из kernel32.lib(KERNEL32.dll)
+      Удален ".idata$6" из vcruntimed.lib(VCRUNTIME140D.dll)
+      Удален ".idata$6" из vcruntimed.lib(VCRUNTIME140D.dll)
+      Удален ".idata$6" из vcruntimed.lib(VCRUNTIME140D.dll)
+      Удален ".idata$6" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$6" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$6" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$6" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$6" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$6" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$6" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$6" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$6" из ucrtd.lib(ucrtbased.dll)
+      Удален ".idata$6" из kernel32.lib(KERNEL32.dll)
+      Удален ".idata$6" из kernel32.lib(KERNEL32.dll)
+      Удален dtrnlsp_init_ из mkl_intel_lp64_dll.lib(_dtrnlsp_init_lp64.obj)
+      Удален DTRNLSP_INIT из mkl_intel_lp64_dll.lib(_dtrnlsp_init_lp64.obj)
+      Удален DTRNLSP_CHECK из mkl_intel_lp64_dll.lib(_dtrnlsp_check_lp64.obj)
+      Удален dtrnlsp_check_ из mkl_intel_lp64_dll.lib(_dtrnlsp_check_lp64.obj)
+      Удален DTRNLSP_SOLVE из mkl_intel_lp64_dll.lib(_dtrnlsp_solve_lp64.obj)
+      Удален dtrnlsp_solve_ из mkl_intel_lp64_dll.lib(_dtrnlsp_solve_lp64.obj)
+      Удален DTRNLSP_GET из mkl_intel_lp64_dll.lib(_dtrnlsp_get_lp64.obj)
+      Удален dtrnlsp_get_ из mkl_intel_lp64_dll.lib(_dtrnlsp_get_lp64.obj)
+      Удален DTRNLSP_DELETE из mkl_intel_lp64_dll.lib(_dtrnlsp_delete_lp64.obj)
+      Удален dtrnlsp_delete_ из mkl_intel_lp64_dll.lib(_dtrnlsp_delete_lp64.obj)
+      Удален DJACOBIX из mkl_intel_lp64_dll.lib(_djacobix_lp64.obj)
+      Удален djacobix_ из mkl_intel_lp64_dll.lib(_djacobix_lp64.obj)
+      Удален dfdnewtask1d из mkl_intel_lp64_dll.lib(df_dnewtask1d.obj)
+      Удален DFDNEWTASK1D из mkl_intel_lp64_dll.lib(df_dnewtask1d.obj)
+      Удален dfdeditppspline1d из mkl_intel_lp64_dll.lib(df_deditppspline1d.obj)
+      Удален DFDEDITPPSPLINE1D из mkl_intel_lp64_dll.lib(df_deditppspline1d.obj)
+      Удален dfdconstruct1d из mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+      Удален DFDCONSTRUCT1D из mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+      Удален dfdinterpolate1d из mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+      Удален DFDINTERPOLATE1D из mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+      Удален dfdeletetask из mkl_intel_lp64_dll.lib(df_deletetask.obj)
+      Удален DFDELETETASK из mkl_intel_lp64_dll.lib(df_deletetask.obj)
+      Удален MKLFreeTls из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален MKLFREETLS из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален mklfreetls из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален MKLFreeTls_64 из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален MKLFREETLS_64 из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален mklfreetls_64 из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален Lock из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален UnLock из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален mkl_vml_serv_get_dll_handle из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален Init_MKL_Loader из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Удален MKL_Set_Exit_Handler из mkl_intel_lp64_dll.lib(_set_exit_handler.obj)
+      Удален MKL_SET_EXIT_HANDLER из mkl_intel_lp64_dll.lib(_set_exit_handler.obj)
+      Удален mkl_set_exit_handler_ из mkl_intel_lp64_dll.lib(_set_exit_handler.obj)
+      Удален mkl_set_exit_handler из mkl_intel_lp64_dll.lib(_set_exit_handler.obj)
+      Удален __JustMyCode_Default из dllmain.obj
+      Удален "void __cdecl __empty_global_delete(void *)" (?__empty_global_delete@@YAXPEAX@Z) из pch.obj
+      Удален "void __cdecl __empty_global_delete(void *,unsigned __int64)" (?__empty_global_delete@@YAXPEAX_K@Z) из pch.obj
+      Удален mkl_serv_set_exit_handler из mkl_sequential_dll.lib(mkl_sequential.2.dll)
+      Удален GetProcAddress из kernel32.lib(KERNEL32.dll)
+      Удален MultiByteToWideChar из kernel32.lib(KERNEL32.dll)
+      Удален GetModuleFileNameW из kernel32.lib(KERNEL32.dll)
+      Удален GetModuleHandleExA из kernel32.lib(KERNEL32.dll)
+      Удален TerminateProcess из kernel32.lib(KERNEL32.dll)
+      Удален GetCurrentProcess из kernel32.lib(KERNEL32.dll)
+      Удален _CRT_RTC_INIT из MSVCRTD.lib(init.obj)
+      Удален _CRT_RTC_INITW из MSVCRTD.lib(init.obj)
+      Удален _RTC_InitBase из MSVCRTD.lib(init.obj)
+      Удален _RTC_Shutdown из MSVCRTD.lib(init.obj)
+      Удален _RTC_AllocaHelper из MSVCRTD.lib(stack.obj)
+      Удален _RTC_CheckStackVars2 из MSVCRTD.lib(stack.obj)
+      Удален _CRT_INIT из MSVCRTD.lib(dll_dllmain.obj)
+      Удален _RTC_GetErrDesc из MSVCRTD.lib(userapi.obj)
+      Удален _RTC_NumErrors из MSVCRTD.lib(userapi.obj)
+      Удален _RTC_SetErrorFunc из MSVCRTD.lib(userapi.obj)
+      Удален _RTC_SetErrorFuncW из MSVCRTD.lib(userapi.obj)
+      Удален _RTC_SetErrorType из MSVCRTD.lib(userapi.obj)
+      Удален "void __cdecl _RTC_AllocaFailure(void *,struct _RTC_ALLOCA_NODE *,int)" (?_RTC_AllocaFailure@@YAXPEAXPEAU_RTC_ALLOCA_NODE@@H@Z) из MSVCRTD.lib(error.obj)
+      Удален "void __cdecl _RTC_Failure(void *,int)" (?_RTC_Failure@@YAXPEAXH@Z) из MSVCRTD.lib(error.obj)
+      Удален "void __cdecl _getMemBlockDataString(char *,char *,char const *,unsigned __int64)" (?_getMemBlockDataString@@YAXPEAD0PEBD_K@Z) из MSVCRTD.lib(error.obj)
+      Удален _RTC_UninitUse из MSVCRTD.lib(error.obj)
+      Удален _vsprintf_s_l из MSVCRTD.lib(error.obj)
+      Удален sprintf_s из MSVCRTD.lib(error.obj)
+      Удален __report_rangecheckfailure из MSVCRTD.lib(gs_report.obj)
+      Удален __report_securityfailure из MSVCRTD.lib(gs_report.obj)
+      Удален __report_securityfailureEx из MSVCRTD.lib(gs_report.obj)
+      Удален capture_current_context из MSVCRTD.lib(gs_report.obj)
+      Удален _onexit из MSVCRTD.lib(utility.obj)
+      Удален at_quick_exit из MSVCRTD.lib(utility.obj)
+      Удален atexit из MSVCRTD.lib(utility.obj)
+      Удален __scrt_get_show_window_mode из MSVCRTD.lib(utility_desktop.obj)
+      Удален __scrt_initialize_mta из MSVCRTD.lib(utility_desktop.obj)
+      Удален __scrt_initialize_winrt из MSVCRTD.lib(utility_desktop.obj)
+      Удален __scrt_is_managed_app из MSVCRTD.lib(utility_desktop.obj)
+      Удален __scrt_set_unhandled_exception_filter из MSVCRTD.lib(utility_desktop.obj)
+      Удален __scrt_stub_for_initialize_mta из MSVCRTD.lib(utility_desktop.obj)
+      Удален __scrt_unhandled_exception_filter из MSVCRTD.lib(utility_desktop.obj)
+      Удален ReadNoFence64 из MSVCRTD.lib(guard_support.obj)
+      Удален ReadPointerNoFence из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_check_failure_debugbreak из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_check_failure_fastfail из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_check_failure_nop из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_check_failure_os_handled из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_check_failure_os_handled_wrapper из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_check_failure_user_handled из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_check_failure_user_handled_wrapper из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_compat_check из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_set_user_handler из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_slow_path_check_debugbreak из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_slow_path_check_fastfail из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_slow_path_check_nop из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_slow_path_check_os_handled из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_slow_path_check_user_handled из MSVCRTD.lib(guard_support.obj)
+      Удален __castguard_slow_path_compat_check из MSVCRTD.lib(guard_support.obj)
+      Удален _guard_icall_checks_enforced из MSVCRTD.lib(guard_support.obj)
+      Удален _guard_rf_checks_enforced из MSVCRTD.lib(guard_support.obj)
+      Удален "public: bool __cdecl std::ios_base::good(void)const " (?good@ios_base@std@@QEBA_NXZ) из msvcprtd.lib(MSVCP140D.dll)
+      Удален "public: int __cdecl std::ios_base::flags(void)const " (?flags@ios_base@std@@QEBAHXZ) из msvcprtd.lib(MSVCP140D.dll)
+      Удален "public: __int64 __cdecl std::ios_base::width(void)const " (?width@ios_base@std@@QEBA_JXZ) из msvcprtd.lib(MSVCP140D.dll)
+      Удален "public: __int64 __cdecl std::ios_base::width(__int64)" (?width@ios_base@std@@QEAA_J_J@Z) из msvcprtd.lib(MSVCP140D.dll)
+      Удален "public: int __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::sputc(char)" (?sputc@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAAHD@Z) из msvcprtd.lib(MSVCP140D.dll)
+      Удален "public: __int64 __cdecl std::basic_streambuf<char,struct std::char_traits<char> >::sputn(char const *,__int64)" (?sputn@?$basic_streambuf@DU?$char_traits@D@std@@@std@@QEAA_JPEBD_J@Z) из msvcprtd.lib(MSVCP140D.dll)
+      Удален "public: void __cdecl std::basic_ios<char,struct std::char_traits<char> >::setstate(int,bool)" (?setstate@?$basic_ios@DU?$char_traits@D@std@@@std@@QEAAXH_N@Z) из msvcprtd.lib(MSVCP140D.dll)
+      Удален "public: class std::basic_ostream<char,struct std::char_traits<char> > * __cdecl std::basic_ios<char,struct std::char_traits<char> >::tie(void)const " (?tie@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBAPEAV?$basic_ostream@DU?$char_traits@D@std@@@2@XZ) из msvcprtd.lib(MSVCP140D.dll)
+      Удален "public: class std::basic_streambuf<char,struct std::char_traits<char> > * __cdecl std::basic_ios<char,struct std::char_traits<char> >::rdbuf(void)const " (?rdbuf@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBAPEAV?$basic_streambuf@DU?$char_traits@D@std@@@2@XZ) из msvcprtd.lib(MSVCP140D.dll)
+      Удален "public: char __cdecl std::basic_ios<char,struct std::char_traits<char> >::fill(void)const " (?fill@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADXZ) из msvcprtd.lib(MSVCP140D.dll)
+      Удален "public: char __cdecl std::basic_ios<char,struct std::char_traits<char> >::widen(char)const " (?widen@?$basic_ios@DU?$char_traits@D@std@@@std@@QEBADD@Z) из msvcprtd.lib(MSVCP140D.dll)
+      Удален "public: void __cdecl std::basic_ostream<char,struct std::char_traits<char> >::_Osfx(void)" (?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAXXZ) из msvcprtd.lib(MSVCP140D.dll)
+      Удален "public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::operator<<(class std::basic_ostream<char,struct std::char_traits<char> > & (__cdecl*)(class std::basic_ostream<char,struct std::char_traits<char> > &))" (??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV01@P6AAEAV01@AEAV01@@Z@Z) из msvcprtd.lib(MSVCP140D.dll)
+      Удален "public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::put(char)" (?put@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@D@Z) из msvcprtd.lib(MSVCP140D.dll)
+      Удален "public: class std::basic_ostream<char,struct std::char_traits<char> > & __cdecl std::basic_ostream<char,struct std::char_traits<char> >::flush(void)" (?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAAAEAV12@XZ) из msvcprtd.lib(MSVCP140D.dll)
+      Удален wcsrchr из vcruntimed.lib(VCRUNTIME140D.dll)
+      Удален __current_exception из vcruntimed.lib(VCRUNTIME140D.dll)
+      Удален __current_exception_context из vcruntimed.lib(VCRUNTIME140D.dll)
+      Удален setlocale из ucrtd.lib(ucrtbased.dll)
+      Удален wcsnlen из ucrtd.lib(ucrtbased.dll)
+      Удален wcsncat_s из ucrtd.lib(ucrtbased.dll)
+      Удален _CrtDbgReport из ucrtd.lib(ucrtbased.dll)
+      Удален _CrtDbgReportW из ucrtd.lib(ucrtbased.dll)
+      Удален __stdio_common_vsprintf_s из ucrtd.lib(ucrtbased.dll)
+      Удален _register_onexit_function из ucrtd.lib(ucrtbased.dll)
+      Удален _crt_atexit из ucrtd.lib(ucrtbased.dll)
+      Удален _crt_at_quick_exit из ucrtd.lib(ucrtbased.dll)
+      Удален terminate из ucrtd.lib(ucrtbased.dll)
+      Удален GetCurrentThreadId из kernel32.lib(KERNEL32.dll)
+      Удален IsDebuggerPresent из kernel32.lib(KERNEL32.dll)
+      Удален RaiseException из kernel32.lib(KERNEL32.dll)
+      Удален WideCharToMultiByte из kernel32.lib(KERNEL32.dll)
+      Удален RtlCaptureContext из kernel32.lib(KERNEL32.dll)
+      Удален RtlLookupFunctionEntry из kernel32.lib(KERNEL32.dll)
+      Удален RtlVirtualUnwind из kernel32.lib(KERNEL32.dll)
+      Удален UnhandledExceptionFilter из kernel32.lib(KERNEL32.dll)
+      Удален SetUnhandledExceptionFilter из kernel32.lib(KERNEL32.dll)
+      Удален IsProcessorFeaturePresent из kernel32.lib(KERNEL32.dll)
+      Удален QueryPerformanceCounter из kernel32.lib(KERNEL32.dll)
+      Удален GetCurrentProcessId из kernel32.lib(KERNEL32.dll)
+      Удален GetSystemTimeAsFileTime из kernel32.lib(KERNEL32.dll)
+      Удален InitializeSListHead из kernel32.lib(KERNEL32.dll)
+      Удален GetStartupInfoW из kernel32.lib(KERNEL32.dll)
+      Удален GetModuleHandleW из kernel32.lib(KERNEL32.dll)
+      Удален GetLastError из kernel32.lib(KERNEL32.dll)
+      Удален HeapAlloc из kernel32.lib(KERNEL32.dll)
+      Удален HeapFree из kernel32.lib(KERNEL32.dll)
+      Удален GetProcessHeap из kernel32.lib(KERNEL32.dll)
+      Удален VirtualQuery из kernel32.lib(KERNEL32.dll)
+      Удален FreeLibrary из kernel32.lib(KERNEL32.dll)
+      Удален ".itt_notify_tab" из mkl_intel_lp64_dll.lib(df_dnewtask1d.obj)
+      Удален ".itt_notify_tab" из mkl_intel_lp64_dll.lib(df_dnewtask1d.obj)
+      Удален ".itt_notify_tab" из mkl_intel_lp64_dll.lib(df_deditppspline1d.obj)
+      Удален ".itt_notify_tab" из mkl_intel_lp64_dll.lib(df_deditppspline1d.obj)
+      Удален ".itt_notify_tab" из mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+      Удален ".itt_notify_tab" из mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+      Удален ".itt_notify_tab" из mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+      Удален ".itt_notify_tab" из mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+      Удален ".itt_notify_tab" из mkl_intel_lp64_dll.lib(df_deletetask.obj)
+      Удален ".itt_notify_tab" из mkl_intel_lp64_dll.lib(df_deletetask.obj)
+      Выбранный символ:
+          __scrt_stub_for_acrt_initialize из MSVCRTD.lib(ucrt_stubs.obj)
+      Замененные символы:
+          __scrt_stub_for_acrt_thread_attach из MSVCRTD.lib(ucrt_stubs.obj)
+          __scrt_stub_for_acrt_thread_detach из MSVCRTD.lib(ucrt_stubs.obj)
+      Выбранный символ:
+          __scrt_stub_for_acrt_uninitialize из MSVCRTD.lib(ucrt_stubs.obj)
+      Замененные символы:
+          __scrt_stub_for_acrt_uninitialize_critical из MSVCRTD.lib(ucrt_stubs.obj)
+      Выбранный символ:
+          $stateUnwindMap$CubicSplineSupport из pch.obj
+      Замененные символы:
+          $stateUnwindMap$?TestFunction@@YAXPEAH0PEAN1PEAX@Z из pch.obj
+      Выбранный символ:
+          $unwind$?dllmain_crt_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z из MSVCRTD.lib(dll_dllmain.obj)
+      Замененные символы:
+          $unwind$?dllmain_raw@@YAHQEAUHINSTANCE__@@KQEAX@Z из MSVCRTD.lib(dll_dllmain.obj)
+      Выбранный символ:
+          $unwind$__security_init_cookie из MSVCRTD.lib(gs_support.obj)
+      Замененные символы:
+          $unwind$__scrt_initialize_default_local_stdio_options из MSVCRTD.lib(default_local_stdio_options.obj)
+      Выбранный символ:
+          $unwind$??_U@YAPEAX_K@Z из MSVCRTD.lib(new_array.obj)
+      Замененные символы:
+          $unwind$??_V@YAXPEAX@Z из MSVCRTD.lib(delete_array.obj)
+          $unwind$??0bad_array_new_length@std@@QEAA@XZ из MSVCRTD.lib(throw_bad_alloc.obj)
+          $unwind$?is_potentially_valid_image_base@@YA_NQEAX@Z из MSVCRTD.lib(utility.obj)
+          $unwind$??1exception@std@@UEAA@XZ из MSVCRTD.lib(throw_bad_alloc.obj)
+          $unwind$??1bad_alloc@std@@UEAA@XZ из MSVCRTD.lib(throw_bad_alloc.obj)
+          $unwind$??0bad_alloc@std@@QEAA@XZ из MSVCRTD.lib(throw_bad_alloc.obj)
+          $unwind$__raise_securityfailure из MSVCRTD.lib(gs_report.obj)
+          $unwind$??3@YAXPEAX@Z из MSVCRTD.lib(delete_scalar.obj)
+          $unwind$??1bad_array_new_length@std@@UEAA@XZ из MSVCRTD.lib(throw_bad_alloc.obj)
+      Выбранный символ:
+          $unwind$??_Gtype_info@@UEAAPEAXI@Z из MSVCRTD.lib(std_type_info_static.obj)
+      Замененные символы:
+          $unwind$??_Gexception@std@@UEAAPEAXI@Z из MSVCRTD.lib(throw_bad_alloc.obj)
+          $unwind$??_Gbad_alloc@std@@UEAAPEAXI@Z из MSVCRTD.lib(throw_bad_alloc.obj)
+          $unwind$??_Gbad_array_new_length@std@@UEAAPEAXI@Z из MSVCRTD.lib(throw_bad_alloc.obj)
+      Выбранный символ:
+          $unwind$??3@YAXPEAX_K@Z из MSVCRTD.lib(delete_scalar_size.obj)
+      Замененные символы:
+          $unwind$??0bad_array_new_length@std@@QEAA@AEBV01@@Z из MSVCRTD.lib(throw_bad_alloc.obj)
+          $unwind$??0bad_alloc@std@@AEAA@QEBD@Z из MSVCRTD.lib(throw_bad_alloc.obj)
+          $unwind$??0bad_alloc@std@@QEAA@AEBV01@@Z из MSVCRTD.lib(throw_bad_alloc.obj)
+      Выбранный символ:
+          ".xdata" из mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+      Замененные символы:
+          $unwind$?initialize_environment@__scrt_narrow_environment_policy@@SAHXZ из MSVCRTD.lib(utility.obj)
+          $unwind$__scrt_dllmain_after_initialize_c из MSVCRTD.lib(utility.obj)
+          $unwind$?__scrt_uninitialize_type_info@@YAXXZ из MSVCRTD.lib(tncleanup.obj)
+          $unwind$?__scrt_initialize_type_info@@YAXXZ из MSVCRTD.lib(tncleanup.obj)
+          $unwind$__scrt_dllmain_before_initialize_c из MSVCRTD.lib(utility.obj)
+          $unwind$__scrt_dllmain_uninitialize_c из MSVCRTD.lib(utility.obj)
+          $unwind$__scrt_dllmain_uninitialize_critical из MSVCRTD.lib(utility.obj)
+          $unwind$__scrt_dllmain_crt_thread_attach из MSVCRTD.lib(utility.obj)
+          $unwind$__scrt_dllmain_crt_thread_detach из MSVCRTD.lib(utility.obj)
+          $unwind$?configure_argv@__scrt_narrow_argv_policy@@SAHXZ из MSVCRTD.lib(utility.obj)
+      Выбранный символ:
+          $unwind$?fin$0@?0??dllmain_crt_process_attach@@YAHQEAUHINSTANCE__@@QEAX@Z@4HA из MSVCRTD.lib(dll_dllmain.obj)
+      Замененные символы:
+          $unwind$?fin$1@?0??dllmain_crt_process_detach@@YAH_N@Z@4HA из MSVCRTD.lib(dll_dllmain.obj)
+          $unwind$?fin$0@?0??dllmain_crt_process_detach@@YAH_N@Z@4HA из MSVCRTD.lib(dll_dllmain.obj)
+          $unwind$__scrt_is_nonwritable_in_current_image$filt$0 из MSVCRTD.lib(utility.obj)
+          $unwind$?filt$0@?0??notify_debugger@@YAXAEBUtagEXCEPTION_VISUALCPP_DEBUG_INFO@@@Z@4HA из MSVCRTD.lib(error.obj)
+      Выбранный символ:
+          $unwind$__CheckForDebuggerJustMyCode из MSVCRTD.lib(debugger_jmc.obj)
+      Замененные символы:
+          $unwind$??2@YAPEAX_K@Z из MSVCRTD.lib(new_scalar.obj)
+          $unwind$__report_gsfailure из MSVCRTD.lib(gs_report.obj)
+      Выбранный символ:
+          $unwind$__scrt_acquire_startup_lock из MSVCRTD.lib(utility.obj)
+      Замененные символы:
+          $unwind$?__scrt_throw_std_bad_array_new_length@@YAXXZ из MSVCRTD.lib(throw_bad_alloc.obj)
+          $unwind$?__scrt_throw_std_bad_alloc@@YAXXZ из MSVCRTD.lib(throw_bad_alloc.obj)
+      Выбранный символ:
+          $unwind$__scrt_release_startup_lock из MSVCRTD.lib(utility.obj)
+      Замененные символы:
+          $unwind$__scrt_initialize_crt из MSVCRTD.lib(utility.obj)
+      Выбранный символ:
+          ".xdata" из mkl_intel_lp64_dll.lib(df_deletetask.obj)
+      Замененные символы:
+          ".xdata" из mkl_intel_lp64_dll.lib(_set_exit_handler.obj)
+      Выбранный символ:
+          ".xdata" из mkl_intel_lp64_dll.lib(_djacobix_lp64.obj)
+      Замененные символы:
+          $unwind$?DebuggerProbe@@YA_NK@Z из MSVCRTD.lib(error.obj)
+          $unwind$?DebuggerRuntime@@YA_NKHPEAXPEB_W@Z из MSVCRTD.lib(error.obj)
+      Выбранный символ:
+          $unwind$?dtor$0@?0???$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z@4HA из pch.obj
+      Замененные символы:
+          $unwind$?catch$1@?0???$?6U?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@PEBD@Z@4HA из pch.obj
+          $unwind$?dtor$0@?0???0sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEAA@AEAV12@@Z@4HA из pch.obj
+      Выбранный символ:
+          $unwind$?length@?$_Narrow_char_traits@DH@std@@SA_KQEBD@Z из pch.obj
+      Замененные символы:
+          $unwind$??$endl@DU?$char_traits@D@std@@@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@@Z из pch.obj
+          $unwind$??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QEBA_NXZ из pch.obj
+      Выбранный символ:
+          $unwind$_RTC_Initialize из MSVCRTD.lib(initsect.obj)
+      Замененные символы:
+          $unwind$_RTC_Terminate из MSVCRTD.lib(initsect.obj)
+      Выбранный символ:
+          $unwind$CubicSplineSupport$catch$0 из pch.obj
+      Замененные символы:
+          $unwind$?catch$0@?0??TestFunction@@YAXPEAH0PEAN1PEAX@Z@4HA из pch.obj
+      Итоговые накопления ICF: 408 байт
+  Запуск 2-го прохода
+       * linker generated manifest res *
+       DLL1.exp
+       pch.obj
+       dllmain.obj
+       mkl_intel_lp64_dll.lib(df_dinterpolate1d.obj)
+       mkl_intel_lp64_dll.lib(df_dconstruct1d.obj)
+       mkl_intel_lp64_dll.lib(df_deletetask.obj)
+       mkl_intel_lp64_dll.lib(df_dnewtask1d.obj)
+       mkl_intel_lp64_dll.lib(df_deditppspline1d.obj)
+       mkl_intel_lp64_dll.lib(vml_dll_interface_iface.obj)
+       mkl_intel_lp64_dll.lib(_dtrnlsp_check_lp64.obj)
+       mkl_intel_lp64_dll.lib(_dtrnlsp_solve_lp64.obj)
+       mkl_intel_lp64_dll.lib(_dtrnlsp_init_lp64.obj)
+       mkl_intel_lp64_dll.lib(_dtrnlsp_get_lp64.obj)
+       mkl_intel_lp64_dll.lib(_dtrnlsp_delete_lp64.obj)
+       mkl_intel_lp64_dll.lib(_djacobix_lp64.obj)
+       mkl_intel_lp64_dll.lib(_set_exit_handler.obj)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       mkl_sequential_dll.lib(mkl_sequential.2.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       kernel32.lib(KERNEL32.dll)
+       MSVCRTD.lib(amdsecgs.obj)
+       MSVCRTD.lib(guard_dispatch.obj)
+       MSVCRTD.lib(guard_xfg_dispatch.obj)
+       MSVCRTD.lib(gs_cookie.obj)
+       MSVCRTD.lib(gs_report.obj)
+       MSVCRTD.lib(gs_support.obj)
+       MSVCRTD.lib(debugger_jmc.obj)
+       MSVCRTD.lib(guard_support.obj)
+       MSVCRTD.lib(loadcfg.obj)
+       MSVCRTD.lib(dyn_tls_init.obj)
+       MSVCRTD.lib(ucrt_detection.obj)
+       MSVCRTD.lib(cpu_disp.obj)
+       MSVCRTD.lib(argv_mode.obj)
+       MSVCRTD.lib(default_local_stdio_options.obj)
+       MSVCRTD.lib(fltused.obj)
+       MSVCRTD.lib(std_type_info_static.obj)
+       MSVCRTD.lib(tncleanup.obj)
+       MSVCRTD.lib(delete_array.obj)
+       MSVCRTD.lib(delete_scalar.obj)
+       MSVCRTD.lib(delete_scalar_size.obj)
+       MSVCRTD.lib(new_array.obj)
+       MSVCRTD.lib(new_scalar.obj)
+       MSVCRTD.lib(throw_bad_alloc.obj)
+       MSVCRTD.lib(dll_dllmain.obj)
+       MSVCRTD.lib(initializers.obj)
+       MSVCRTD.lib(utility.obj)
+       MSVCRTD.lib(ucrt_stubs.obj)
+       MSVCRTD.lib(utility_desktop.obj)
+       MSVCRTD.lib(error.obj)
+       MSVCRTD.lib(init.obj)
+       MSVCRTD.lib(initsect.obj)
+       MSVCRTD.lib(pdblkup.obj)
+       MSVCRTD.lib(stack.obj)
+       MSVCRTD.lib(userapi.obj)
+       MSVCRTD.lib(gshandler.obj)
+       MSVCRTD.lib(gshandlereh4.obj)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       msvcprtd.lib(MSVCP140D.dll)
+       vcruntimed.lib(VCRUNTIME140_1D.dll)
+       vcruntimed.lib(VCRUNTIME140_1D.dll)
+       vcruntimed.lib(VCRUNTIME140_1D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(VCRUNTIME140D.dll)
+       vcruntimed.lib(softmemtag.obj)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+       ucrtd.lib(ucrtbased.dll)
+  2-ой проход завершен
+  DLL1.vcxproj -> D:\projects\c#_project\lab4\x64\Debug\DLL1.dll

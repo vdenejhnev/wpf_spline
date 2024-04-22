@@ -1,23 +1,4 @@
-﻿//using classes;
-//using System.Runtime.InteropServices;
-
-/*
-internal class main
-{
-    static void Main(string[] args)
-    {
-        FValues rez = func;
-        V2DataArray testArray = new V2DataArray("key", DateTime.Now, 3, -5, 5, rez, "x * x - 5 * x - 5");
-        testArray.Save("C:\\Users\\main\\source\\repos\\mkllab\\DataArrayFile.txt");
-    }
-    static void func(double x, ref double y1, ref double y2)
-    {
-        y1 = x * x - 5 * x - 5;
-        y2 = x - 1;
-    }
-}*/
-
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
@@ -189,15 +170,26 @@ namespace classes
 
         public double [] Borders { get; set; }
 
+        public int Nodes { get; set; }
+
         public FValues Function { get; set; }
+
+        public int FunctionIndex { get; set; }
+
+        public bool GridType { get; set; }
 
         public V2DataArray(string key = "default", DateTime date = new System.DateTime()) : base(key, date)
         {
             X = new double[0];
             Y = new double[0, 0];
+
+            Borders = new double[2] { 0, 0 };
+            Nodes = 1;
+            GridType = true;
+            FunctionIndex = 0;
         }
 
-        public V2DataArray(string key, DateTime date, double[] borders, double[] x, FValues F) : base(key, date)
+        public V2DataArray(string key, DateTime date, double[] borders, double[] x, FValues F, bool gridType, int functionIndex) : base(key, date)
         {
             X = x;
             Y = new double[x.Length, 2];
@@ -210,9 +202,12 @@ namespace classes
 
             Function = F;
             Borders = borders;
+            Nodes = x.Length;
+            GridType = gridType;
+            FunctionIndex = functionIndex;
         }
 
-        public V2DataArray(string key, DateTime date, int nX, double xL, double xR, FValues F) : base(key, date)
+        public V2DataArray(string key, DateTime date, int nX, double xL, double xR, FValues F, bool gridType, int functionIndex) : base(key, date)
         {
             X = new double[nX];
             Y = new double[nX, 2];
@@ -228,6 +223,9 @@ namespace classes
 
             Function = F;
             Borders = new double[2] { xL, xR };
+            Nodes = nX;
+            GridType = gridType;
+            FunctionIndex = functionIndex;
         }
 
         public double[] this[int index]
@@ -312,6 +310,10 @@ namespace classes
                 writer.WriteLine(dataArray.Key);
                 writer.WriteLine(dataArray.Time);
                 writer.WriteLine(dataArray.X.Length);
+                writer.WriteLine(dataArray.Borders[0]);
+                writer.WriteLine(dataArray.Borders[1]);
+                writer.WriteLine(dataArray.GridType);
+                writer.WriteLine(dataArray.FunctionIndex);
                 writer.WriteLine();
 
                 for (int i = 0; i < dataArray.X.Length; i++)
@@ -351,9 +353,13 @@ namespace classes
                         case "S":
                             dataArray.Key = reader.ReadLine();
                             dataArray.Time = Convert.ToDateTime(reader.ReadLine());
-                            int length = Convert.ToInt32(reader.ReadLine());
-                            dataArray.X = new double[length];
-                            dataArray.Y = new double[length, 2];
+                            dataArray.Nodes = Convert.ToInt32(reader.ReadLine());
+                            dataArray.Borders[0] = Convert.ToDouble(reader.ReadLine());
+                            dataArray.Borders[1] = Convert.ToDouble(reader.ReadLine());
+                            dataArray.GridType = Convert.ToBoolean(reader.ReadLine());
+                            dataArray.FunctionIndex = Convert.ToInt32(reader.ReadLine());
+                            dataArray.X = new double[dataArray.Nodes];
+                            dataArray.Y = new double[dataArray.Nodes, 2];
                             reader.ReadLine();
                             state = "X";
                             break;
@@ -391,7 +397,96 @@ namespace classes
                 reader.Close();
             }
         }
+
+    /*public static bool Save(string filename, V2DataArray dataArray)
+    {
+        StreamWriter writer = new StreamWriter(File.Open(filename, FileMode.Create));
+
+        try
+        {
+            writer.WriteLine(dataArray.Key);
+            writer.WriteLine(dataArray.Time);
+            writer.WriteLine(dataArray.X.Length);
+            writer.WriteLine();
+
+            for (int i = 0; i < dataArray.X.Length; i++)
+            {
+                writer.WriteLine(dataArray.X[i].ToString());
+                writer.WriteLine(dataArray.Y[i, 0].ToString());
+                writer.WriteLine(dataArray.Y[i, 1].ToString());
+                writer.WriteLine();
+            }
+
+            Console.WriteLine($"Success saving data to file '{filename}'");
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error saving data to file '{filename}': {ex.Message}");
+            return false;
+        }
+        finally
+        {
+            writer.Close();
+        }
     }
+
+    public static bool Load(string filename, ref V2DataArray dataArray)
+    {
+        StreamReader reader = new StreamReader(filename);
+        string state = "S";
+        int item = 0;
+
+        try
+        {
+            while (!reader.EndOfStream)
+            {
+                switch (state)
+                {
+                    case "S":
+                        dataArray.Key = reader.ReadLine();
+                        dataArray.Time = Convert.ToDateTime(reader.ReadLine());
+                        int length = Convert.ToInt32(reader.ReadLine());
+                        dataArray.X = new double[length];
+                        dataArray.Y = new double[length, 2];
+                        reader.ReadLine();
+                        state = "X";
+                        break;
+                    case "X":
+                        dataArray.X[item] = Convert.ToDouble(reader.ReadLine());
+                        state = "Y0";
+                        break;
+                    case "Y0":
+                        dataArray.Y[item, 0] = Convert.ToDouble(reader.ReadLine());
+                        state = "Y1";
+                        break;
+                    case "Y1":
+                        dataArray.Y[item, 1] = Convert.ToDouble(reader.ReadLine());
+                        state = "N";
+                        break;
+                    case "N":
+                        reader.ReadLine();
+                        item++;
+                        state = "X";
+                        break;
+                }
+            }
+
+            Console.WriteLine($"Success loading data from file '{filename}'");
+
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading data from file '{filename}': {ex.Message}");
+            return false;
+        }
+        finally
+        {
+            reader.Close();
+        }
+    }*/
+}
 
     public class V2MainCollection : ObservableCollection<V2Data>
     {
@@ -650,9 +745,7 @@ namespace classes
             }
         }
 
-        //[DllImport("..\\..\\..\\..\\x64\\Debug\\DLL1.dll", CallingConvention = CallingConvention.Cdecl)]
-        //public static extern void SplineInterpolation(int nx, int ny, double[] x, double[] y, double[] scoeff, int nsite, double[] site, int ndorder, int[] dorder, double[] approximation, int maxiter, int maxiter_step, ref int stopCriteria, ref double resFinal, ref int ndoneIter, double rs, double[] result, ref int ret);
-        [DllImport("..\\..\\..\\..\\x64\\DEBUG\\DLL1.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("..\\..\\..\\..\\x64\\Debug\\DLL1.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern int CubicSpline(int nX, int m, int maxIter, double[] X, double[] Y, double[] YSpline, ref double minRes, ref int countIter, ref int status);
     }
 

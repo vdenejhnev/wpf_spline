@@ -55,11 +55,11 @@
         <TextBox x:Name="residualnorm" Width="168" Height="36" Margin="384,582,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding residualnorm, Converter={StaticResource StringToDouble}}" FontFamily="Calibri" AutoWordSelection="True" Grid.ColumnSpan="2"/>
         <TextBox x:Name="iterations" Width="168" Height="36" Margin="384,647,0,0" FontSize="18" VerticalAlignment="Top" BorderThickness="2,2,2,2" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Text="{Binding iterations, Converter={StaticResource StringToInt}}" FontFamily="Calibri" AutoWordSelection="True" Grid.ColumnSpan="2" />
         <ListBox x:Name="SplineDataItemOut" Width="580" Height="328" Margin="10,67,0,0" BorderThickness="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding splinedatageter1}" BorderBrush="#FFB5B5B5" FontFamily="Calibri" FontSize="14" Grid.ColumnSpan="2">
-        <ListBox.ItemTemplate>
-            <DataTemplate>
-                <TextBlock Text="{Binding}"/>
-            </DataTemplate>
-        </ListBox.ItemTemplate>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
         <ListBox x:Name="SplineDataDoubleMeshOut" Width="580" Height="328" Margin="0,67,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="2,1,2,2" ItemsSource="{Binding splinedatageter2}" Grid.Column="2" BorderBrush="#FFB5B5B5" FontFamily="Calibri" FontSize="14">
             <ListBox.ItemTemplate>
@@ -78,11 +78,11 @@
         <TextBlock HorizontalAlignment="Left" Margin="189,528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Число узлов" FontFamily="Calibri" FontSize="16" Width="NaN" Height="NaN"/>
         <TextBlock HorizontalAlignment="Left" Margin="189,588,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Тип сетки" FontFamily="Calibri" FontSize="16" Width="NaN" Height="NaN"/>
         <TextBlock HorizontalAlignment="Left" Margin="187,653,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Функция" Width="NaN" Height="NaN"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="20"><Run Text="Интерполяци"/><Run Language="ru-ru" Text="я"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" FontFamily="Calibri" FontSize="20" Text="Сплайн"/>
-        <TextBlock HorizontalAlignment="Left" Margin="44,467,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Число узлов сплайна" Grid.ColumnSpan="2" Height="NaN" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="44,528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Grid.ColumnSpan="2" Height="NaN" Grid.Column="1"><Run Text="Число узлов "/><Run Language="ru-ru" Text="сетки"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="44,587,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Grid.ColumnSpan="2" Height="NaN" Grid.Column="1"><Run Language="ru-ru" Text="Норма невязки"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="44,652,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Максимальное число итераций" Grid.ColumnSpan="2" Height="NaN" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="20"><Run Language="ru-ru" Text="Сплайн"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" FontFamily="Calibri" FontSize="20"><Run Text="Сплайн по равно"/><Run Language="ru-ru" Text="м"/><Run Text="ерной сетке"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="586,467,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Число узлов сплайна" Height="NaN" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="586,528,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Height="NaN" Grid.ColumnSpan="2"><Run Text="Число узлов "/><Run Language="ru-ru" Text="сетки"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="586,587,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Height="NaN" Grid.ColumnSpan="2"><Run Language="ru-ru" Text="Норма невязки"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="586,652,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Text="Максимальное число итераций" Height="NaN" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

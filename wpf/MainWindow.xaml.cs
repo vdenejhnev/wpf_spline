@@ -189,10 +189,22 @@ namespace wpf
                 try
                 {
                     viewData.Load(dlg.FileName);
-                    //function.SelectedIndex = viewData.funclist.IndexOf(viewData.DataArray.fonstr);
                     BindingOperations.GetBindingExpression(borders, TextBox.TextProperty).UpdateTarget();
                     BindingOperations.GetBindingExpression(nodes, TextBox.TextProperty).UpdateTarget();
-                    //BindingOperations.GetBindingExpression(gridtype, ComboBox.TextProperty).UpdateTarget();
+                    function.SelectedIndex = viewData.DataArray.FunctionIndex;
+
+                    if (viewData.DataArray.GridType == true)
+                    {
+                        gridtype.SelectedIndex = 0;
+                    } 
+                    else
+                    {
+                        gridtype.SelectedIndex = 1;
+                    }
+
+                    DataFromControls.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+
+
                 }
                 catch (Exception exc)
                 {
@@ -256,9 +268,9 @@ namespace wpf
                         SplineDataItemOut.ItemsSource = viewData.SplineData.Results;
                         SplineDataDoubleMeshOut.ItemsSource = viewData.SplineData.ResultsSmallGrid;
                     }
-                    catch
+                    catch (Exception exp)
                     {
-                        showError("Ошибка при построении сплайна");
+                        showError("Ошибка при построении сплайна: " + exp);
                     }
                 }
                 else
@@ -282,6 +294,21 @@ namespace wpf
             }
         }
 
+        private void gridtypeSelectHandler(object sender, SelectionChangedEventArgs e)
+        {
+            viewData.gridtype = false;
+
+            if (gridtype.SelectedIndex == 0)
+            {
+                viewData.gridtype = true;
+            }
+        }
+
+        private void functionSelectHandler(object sender, SelectionChangedEventArgs e)
+        {
+            viewData.function = function.SelectedIndex;
+        }
+
         public static void showError(string msg)
         {
             MessageBox.Show(msg, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -290,20 +317,6 @@ namespace wpf
         public static void showMessage(string msg)
         {
             MessageBox.Show(msg, "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
-        private void gridtypeSelectHandler(object sender, SelectionChangedEventArgs e)
-        {
-            viewData.gridtype = false;
-
-            if (gridtype.SelectedIndex == 0) {
-                viewData.gridtype = true;
-            }
-        }
-
-        private void functionSelectHandler(object sender, SelectionChangedEventArgs e)
-        {
-            viewData.function = function.SelectedIndex;
         }
     }
 
@@ -419,7 +432,7 @@ namespace wpf
             this.gridtype = gridtype;
             this.splinenodes = splinenodes;
             this.smallsplinenodes = smallsplinenodes;
-            this.DataArray = new V2DataArray("DataArray1", DateTime.Now, nodes, borders[0], borders[1], function);
+            this.DataArray = new V2DataArray("DataArray1", DateTime.Now, nodes, borders[0], borders[1], function, gridtype, this.function);
         }
 
         public void Save(string filename)
@@ -429,10 +442,11 @@ namespace wpf
 
         public void Load(string filename)
         {
+            this.DataArray = new V2DataArray();
             classes.V2DataArray.Load(filename, ref this.DataArray);
             this.load_data = true;
-            this.borders[0] = this.DataArray.X[0];
-            this.borders[1] = this.DataArray.X[this.DataArray.X.Length - 1];
+            this.borders[0] = this.DataArray.Borders[0];
+            this.borders[1] = this.DataArray.Borders[1];
             this.nodes = this.DataArray.X.Length;
         }
 
@@ -440,7 +454,7 @@ namespace wpf
         {
             if (gridtype == true)
             {
-                this.DataArray = new V2DataArray("DataArray1", DateTime.Now, nodes, borders[0], borders[1], functions[function]);
+                this.DataArray = new V2DataArray("DataArray1", DateTime.Now, nodes, borders[0], borders[1], functions[function], gridtype, function);
             }
             else
             {
@@ -454,7 +468,7 @@ namespace wpf
 
                 Array.Sort(nodes);
                 
-                this.DataArray = new V2DataArray("DataArray1", DateTime.Now, new double[2] { borders[0], borders[1] }, nodes, functions[function]);
+                this.DataArray = new V2DataArray("DataArray1", DateTime.Now, new double[2] { borders[0], borders[1] }, nodes, functions[function], gridtype, function);
             }
 
             load_data = true;

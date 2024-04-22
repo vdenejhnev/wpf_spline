@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "v2data", "classes\v2data.cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wpf", "wpf\wpf.csproj", "{16C6D4FD-13F8-4B56-9C32-C8B7ABC5D947}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dll", "dll\dll.vcxproj", "{01C7D345-9F2B-4170-B323-73A249E1612E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dll", "dll\DLL1.vcxproj", "{01C7D345-9F2B-4170-B323-73A249E1612E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

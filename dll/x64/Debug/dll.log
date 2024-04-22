@@ -1,9 +1,0 @@
-﻿  pch.cpp
-  dllmain.cpp
-  INTRP_MKL.cpp
-D:\projects\c(264,13): warning C4101: ret: неиспользованная локальная переменная
-  Создание кода...
-  (компиляция исходного файла "/INTRP_MKL.cpp")
-  
-     Создается библиотека D:\projects\c#_project\lab4\x64\Debug\dll.lib и объект D:\projects\c#_project\lab4\x64\Debug\dll.exp
-  dll.vcxproj -> D:\projects\c#_project\lab4\x64\Debug\dll.dll
